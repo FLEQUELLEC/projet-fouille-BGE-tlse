@@ -79,7 +79,7 @@ Un notebook `notebook.ipynb` est également disponible pour une exploration inte
 ## Support
 Pour toute question ou bug :
 - Ouvrir une *issue* sur GitLab
-- Ou me contacter via [adresse email]
+- Ou me contacter via florent.lequellec@univ-tls3.fr
 
 ## Roadmap
 - [ ] Nettoyage automatique des données
@@ -87,21 +87,9 @@ Pour toute question ou bug :
 - [ ] Intégration d’une API externe
 - [ ] Déploiement sur un serveur distant
 
-## Contribuer
-
-Les contributions sont bienvenues ! Pour commencer :
-
-1. Fork le projet
-2. Crée une branche (`git checkout -b ma-feature`)
-3. Commit tes changements (`git commit -am 'Ajout d’une fonctionnalité'`)
-4. Push ta branche (`git push origin ma-feature`)
-5. Ouvre une *merge request*
-
-Merci de respecter la structure et les bonnes pratiques du projet.
-
 ## Auteurs et remerciements
-Projet initié par [Ton nom ou équipe]  
-Merci à [professeurs, contributeurs, etc.] pour leur encadrement et retours.
+Projet initié par Florent LE QUELLEC et Antonin MENARD  
+Merci à Roland BARRIOT pour son encadrement et retours.
 
 ## Licence
 Ce projet est sous licence **Apache 2.0** — voir le fichier [LICENSE](LICENSE) pour plus d’informations.
