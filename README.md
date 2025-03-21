@@ -50,10 +50,8 @@ Ce projet est développé dans le cadre du module **Fouille de Données** du Mas
 ---
 
 ## Prérequis
-- Python 3.10+
-- pip
-- `pandas`, `matplotlib`, `scikit-learn`, `seaborn`
-- Git
+- 🚧 **Projet en cours de développement actif**
+  - `futur environnement`
 
 ## Installation
 
