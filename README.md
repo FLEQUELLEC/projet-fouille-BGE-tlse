@@ -91,6 +91,9 @@ Pour toute question ou bug :
 Projet initié par Florent LE QUELLEC et Antonin MENARD  
 Merci à Roland BARRIOT pour son encadrement et retours.
 
+## Provenance des données
+Nos données proviennent du site [EBird](https://ebird.org/about) qui est une base de donnée de suivi d'ornithologie.
+
 ## Licence
 Ce projet est sous licence **Apache 2.0** — voir le fichier [LICENSE](LICENSE) pour plus d’informations.
 
