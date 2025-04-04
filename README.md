@@ -81,11 +81,8 @@ Pour toute question ou bug :
 - Ouvrir une *issue* sur GitLab
 - Ou me contacter via florent.lequellec@univ-tls3.fr
 
-## Roadmap
-- [ ] Nettoyage automatique des données
-- [ ] Ajout d'une interface web minimale
-- [ ] Intégration d’une API externe
-- [ ] Déploiement sur un serveur distant
+## plan de route
+- 
 
 ## Auteurs et remerciements
 Projet initié par Florent LE QUELLEC et Antonin MENARD  
