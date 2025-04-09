@@ -79,10 +79,26 @@ Un notebook `notebook.ipynb` est également disponible pour une exploration inte
 ## Support
 Pour toute question ou bug :
 - Ouvrir une *issue* sur GitLab
-- Ou me contacter via florent.lequellec@univ-tls3.fr
+- Ou me contacter via florent.lequellec@univ-tls3.fr / antonin.menard1@univ-tls3.fr
 
-## plan de route
-- 
+## 🎯 Objectifs de l'analyse
+
+Ce projet vise à explorer l’influence du **moment d’observation** sur la détection d’oiseaux, en utilisant un jeu de données issu de la plateforme eBird. L'objectif est de mieux comprendre comment des variables temporelles comme l’heure, la date ou la durée influencent :
+
+1. **La quantité d’oiseaux observés**  
+   - Identifier les plages horaires ou les jours où les observations sont les plus fréquentes.
+   - Étudier la relation entre la durée d’observation et le nombre d’individus détectés.
+
+2. **La diversité et la répartition des espèces**  
+   - Analyser si certaines espèces sont davantage observées à des moments spécifiques (heure de la journée, période du mois).
+   - Étudier les préférences temporelles des espèces (ex. : oiseaux matinaux vs. crépusculaires).
+
+3. **Les profils d’observation**  
+   - Regrouper les observations en fonction de caractéristiques temporelles et d’effort (durée, distance parcourue, heure) à l’aide d’algorithmes de **clustering**.
+   - Identifier des "profils types" d’observateurs ou de sorties d’observation (ex. : balade courte du matin, sortie longue en après-midi, etc.).
+
+4. **Explorer des pistes de prédiction**  
+   - Tester la capacité d’un modèle de **classification** à prédire certaines caractéristiques (ex. : espèce observée, nombre d’individus) en se basant uniquement sur des variables temporelles.
 
 ## Auteurs et remerciements
 Projet initié par Florent LE QUELLEC et Antonin MENARD  
