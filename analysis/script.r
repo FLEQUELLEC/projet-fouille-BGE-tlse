@@ -1,5 +1,5 @@
 library(tidyverse)
-
+#test
 jd <- read.delim("~/Documents/projet/data/jeu_de_donnees_ebird.txt")
 
 jdp <- jd %>%
