@@ -105,19 +105,7 @@ Le dataset se concentre sur la récidive du **cancer de la thyroïde** après un
 # Cloner le dépôt
 git clone https://gitlab.com/fouille_project/projet.git
 cd projet
-
-# Installer les dépendances (si applicable)
-pip install -r requirements.txt
 ```
-
-## ▶️ Utilisation
-
-```bash
-# Exemple
-python main.py data/input.csv
-```
-
-Un fichier `notebook.ipynb` est disponible pour exploration interactive.
 
 ---
 
