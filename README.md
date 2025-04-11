@@ -1,114 +1,148 @@
+# 📊 Fouille Project – Analyse de la récidive du cancer de la thyroïde
 
-# Fouille Project
+## 📌 Description
+**Fouille Project** est un projet de fouille de données développé dans le cadre du module **Fouille de Données** du Master BGE à l’Université Paul Sabatier - Toulouse III. Il vise à explorer des données médicales afin d’identifier des patterns associés à la récidive du cancer de la thyroïde après traitement.
 
-## Description
-**Fouille Project** est un projet de fouille de données visant à [ajouter ici l’objectif précis du projet – par exemple : explorer des ensembles de données environnementales, biologiques ou génomiques pour en extraire des patterns pertinents].
+---
 
-Ce projet est développé dans le cadre du module **Fouille de Données** du Master BGE à l’Université Paul Sabatier - Toulouse III.
+## 🌟 Objectifs de l'analyse
 
-## Fonctionnalités
-- Exploration et traitement de données biologiques
-- Visualisation des résultats
-- Méthodes de fouille supervisée et non-supervisée
-- Comparaison de performances selon plusieurs algorithmes
+L’objectif principal est d’exploiter des techniques de fouille de données supervisées et non-supervisées pour explorer les facteurs liés à la récidive du cancer. Ce projet se concentre sur :
 
-## Badges
-![Build Status](https://img.shields.io/gitlab/pipeline-status/fouille_project/projet/main)  
-![License](https://img.shields.io/badge/license-Apache%202.0-blue)
+- L’analyse des **profils cliniques et pathologiques** des patients
+- L’identification de **facteurs de risque potentiels**
+- L’utilisation d’algorithmes de **classification** pour prédire la récidive
+- L’exploration de **groupes de patients similaires** par **clustering**
+- La visualisation des résultats pour faciliter l’interprétation médicale
+
+> Cette analyse est exploratoire et les objectifs seront amenés à évoluer avec l’avancement du projet.
+
+---
+
+## ⚙️ Fonctionnalités
+- Exploration et traitement de données médicales
+- Préparation de la matrice individus-variables
+- Application d’algorithmes de classification (arbres de décision, forêts aléatoires, etc.)
+- Clustering non supervisé (k-means, DBSCAN…)
+- Visualisations des résultats (ACP, heatmaps, arbres…)
+
+---
 
 ## 📅 Calendrier du projet
 
 ### ✅ Rendu 1 — 21 mars : Création du groupe et dépôt GitLab
-- Création du projet GitLab
-- Ajout de `@rbarriot` en tant que membre (rôle developer ou maintainer)
-- Envoi d’un mail à RB avec :
-  - Le lien GitLab
-  - Le lien du jeu de données
-  - Le type de données, le nombre d’individus et de variables
+- Création du dépôt GitLab
+- Ajout de `@rbarriot` en tant que membre
+- Envoi d’un mail avec :
+  - Lien GitLab
+  - Lien du jeu de données
+  - Description des données (type, nb individus/variables)
 
 ### 🔍 Rendu 2 — 4 avril : Données et objectifs
-- Mise à jour de ce README avec :
-  - Description du jeu de données
-  - Lien vers les données
-  - Objectifs détaillés (classification / clustering, etc.)
-  - Variables utilisées et transformations prévues
+- Mise à jour du README :
+  - Description du dataset
+  - Objectifs d’analyse
+  - Variables et transformations envisagées
   - Classe prédite (si classification)
 
 ### 🧪 Rendu 3 — 18 avril : Matrice individus-variables
-- Fourniture de la matrice individus-variables
-- Scripts de préparation dans `/data_preparation`
-- Données et matrice dans `/data`
-- Documentation sur le processus
+- Génération de la matrice
+- Stockage dans `/data`
+- Scripts dans `/data_preparation`
+- Documentation du processus
 
-### 📊 Rendu 4 — 25 avril : Analyse et résultats
-- Mise à jour du README avec les résultats principaux
-- Scripts d’analyse dans `/analysis`
+### 📊 Rendu 4 — 25 avril : Résultats et analyse finale
 - Rapport complet dans `/rapport`
-- Dépôt du rapport PDF sur Moodle
-- Envoi d’un mail final à RB
+- Résultats dans `/analysis`
+- Mise à jour du README
+- Dépôt du rapport sur Moodle + envoi à RB
 
 ---
 
-## Prérequis
-- 🚧 **Projet en cours de développement actif**
-  - `futur environnement`
+## 📜 Jeu de données
 
-## Installation
+Données issues de :  
+> *Differentiated Thyroid Cancer Recurrence*  
+> Auteur : Joe Beach Capital – [Kaggle](https://www.kaggle.com/datasets/joebeachcapital/differentiated-thyroid-cancer-recurrence)
+
+Ce jeu de données a été filtré et nettoyé pour se concentrer sur l’analyse de la récidive post-traitement.
+
+### 📂 Contexte
+Le dataset se concentre sur la récidive du **cancer de la thyroïde** après un traitement par **iode radioactif (RAI)**. Il contient des données cliniques, pathologiques, et des informations de suivi pour 383 patients.
+
+### 📊 Vue d’ensemble
+- **Nombre d'observations** : 383
+- **Nombre de variables** : 13
+- **Données manquantes** : Aucune
+- **Type** : données tabulaires, mixtes (catégorielles + numériques)
+
+### 🧬 Variables disponibles
+
+| Nom de la variable     | Description |
+|------------------------|-------------|
+| `Age`                  | Âge du patient |
+| `Gender`               | Sexe (Male/Female) |
+| `Hx Radiotherapy`      | Antécédents de radiothérapie |
+| `Adenopathy`           | Atteinte ganglionnaire |
+| `Pathology`            | Type de cancer thyroïdien |
+| `Focality`             | Focalité tumorale (Uni/Multi) |
+| `Risk`                 | Niveau de risque |
+| `T`, `N`, `M`          | Classifications TNM |
+| `Stage`                | Stade du cancer |
+| `Response`             | Réponse au traitement |
+| `Recurred`             | Récidive (Yes/No) |
+
+### 🔍 Utilisation prévue
+- **Classification** : prédire la récidive (`Recurred`)
+- **Clustering** : regrouper les profils de patients
+- **Statistiques exploratoires** : comprendre les corrélations cliniques
+
+---
+
+## 👨‍💻 Installation
 
 ```bash
 # Cloner le dépôt
 git clone https://gitlab.com/fouille_project/projet.git
 cd projet
 
-# Installer les dépendances
+# Installer les dépendances (si applicable)
 pip install -r requirements.txt
 ```
 
-## Utilisation
+## ▶️ Utilisation
 
 ```bash
-# Exemple d'exécution
+# Exemple
 python main.py data/input.csv
 ```
 
-Un notebook `notebook.ipynb` est également disponible pour une exploration interactive.
+Un fichier `notebook.ipynb` est disponible pour exploration interactive.
 
-## Visuals
-*Capture d’écran ou graphique à ajouter ici si besoin.*
+---
 
-## Support
-Pour toute question ou bug :
-- Ouvrir une *issue* sur GitLab
-- Ou me contacter via florent.lequellec@univ-tls3.fr / antonin.menard1@univ-tls3.fr
+## 📈 Visuals
+📌 *Captures d'écran, visualisations, ou graphiques à insérer ici ultérieurement*
 
-## 🎯 Objectifs de l'analyse
+---
 
-Ce projet vise à explorer l’influence du **moment d’observation** sur la détection d’oiseaux, en utilisant un jeu de données issu de la plateforme eBird. L'objectif est de mieux comprendre comment des variables temporelles comme l’heure, la date ou la durée influencent :
+## 🤝 Auteurs & Remerciements
 
-1. **La quantité d’oiseaux observés**  
-   - Identifier les plages horaires ou les jours où les observations sont les plus fréquentes.
-   - Étudier la relation entre la durée d’observation et le nombre d’individus détectés.
+Projet mené par :
+- **Florent LE QUELLEC**
+- **Antonin MENARD**
 
-2. **La diversité et la répartition des espèces**  
-   - Analyser si certaines espèces sont davantage observées à des moments spécifiques (heure de la journée, période du mois).
-   - Étudier les préférences temporelles des espèces (ex. : oiseaux matinaux vs. crépusculaires).
+Encadré par **Roland BARRIOT** – merci pour ses conseils et son accompagnement.
 
-3. **Les profils d’observation**  
-   - Regrouper les observations en fonction de caractéristiques temporelles et d’effort (durée, distance parcourue, heure) à l’aide d’algorithmes de **clustering**.
-   - Identifier des "profils types" d’observateurs ou de sorties d’observation (ex. : balade courte du matin, sortie longue en après-midi, etc.).
+---
 
-4. **Explorer des pistes de prédiction**  
-   - Tester la capacité d’un modèle de **classification** à prédire certaines caractéristiques (ex. : espèce observée, nombre d’individus) en se basant uniquement sur des variables temporelles.
+## 📜 Licence
 
-## Auteurs et remerciements
-Projet initié par Florent LE QUELLEC et Antonin MENARD  
-Merci à Roland BARRIOT pour son encadrement et retours.
-
-## Provenance des données
-Nos données proviennent du site [EBird](https://ebird.org/about) qui est une base de donnée de suivi d'ornithologie.
-
-## Licence
 Ce projet est sous licence **Apache 2.0** — voir le fichier [LICENSE](LICENSE) pour plus d’informations.
 
-## Statut du projet
-🚧 **Projet en cours de développement actif**
+---
+
+## 🚧 Statut du projet
+
+💠 En développement actif
+
