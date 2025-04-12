@@ -23,7 +23,7 @@ L’objectif principal est d’exploiter des techniques de fouille de données s
 - Exploration et traitement de données médicales
 - Préparation de la matrice individus-variables
 - Application d’algorithmes de classification (arbres de décision, forêts aléatoires, etc.)
-- Clustering non supervisé (k-means, DBSCAN…)
+- Clustering non supervisé (k-means,…)
 - Visualisations des résultats (ACP, heatmaps, arbres…)
 
 ---
