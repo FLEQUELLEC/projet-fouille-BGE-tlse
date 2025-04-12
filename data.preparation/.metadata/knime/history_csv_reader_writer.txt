@@ -1,3 +1,6 @@
+/home/florent/Documents/projet/analysis/resultat_K-NNcsv
+/home/florent/Documents/projet/analysis/resultat_SVM.csv
+/home/florent/Documents/projet/analysis/resultat_regression.csv
 /home/florent/Documents/projet/analysis/resultat_tree.csv
 /home/florent/Documents/projet/analysis/resultat_forest.csv
 /home/florent/Documents/projet/analysis/resultat_baiesien.csv

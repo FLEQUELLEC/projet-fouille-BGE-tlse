@@ -148,3 +148,192 @@ org.knime.core.node.workflow.IllegalFlowObjectStackException: Encountered loop-e
 2025-04-12 11:25:10,696 : WARN  : comm-pool-thread-1 :  : Node : Naive Bayes Learner : 3:16 : Please define the classification column
 2025-04-12 11:25:16,305 : WARN  : KNIME-Worker-19-X-Partitioner 3:20 :  : Node : Naive Bayes Learner : 3:16 : Please define the classification column
 2025-04-12 11:28:32,940 : WARN  : comm-pool-thread-1 :  : Node : CSV Writer : 3:21 : Please specify a file
+2025-04-12 11:53:59,826 : WARN  : KNIME-Worker-1-Logistic Regression Learner 3:25 :  : Node : Logistic Regression Learner : 3:25 : The algorithm did not reach convergence after the specified number of epochs. Setting the epoch limit higher might result in a better model.
+The covariance matrix could not be calculated because the observed fisher information matrix was singular. Did you properly normalize the numerical features?
+2025-04-12 11:54:00,313 : WARN  : KNIME-Worker-2-Logistic Regression Learner 3:25 :  : Node : Logistic Regression Learner : 3:25 : The algorithm did not reach convergence after the specified number of epochs. Setting the epoch limit higher might result in a better model.
+The covariance matrix could not be calculated because the observed fisher information matrix was singular. Did you properly normalize the numerical features?
+2025-04-12 11:54:00,432 : WARN  : KNIME-Worker-3-Logistic Regression Learner 3:25 :  : Node : Logistic Regression Learner : 3:25 : The algorithm did not reach convergence after the specified number of epochs. Setting the epoch limit higher might result in a better model.
+The covariance matrix could not be calculated because the observed fisher information matrix was singular. Did you properly normalize the numerical features?
+2025-04-12 11:54:00,506 : WARN  : KNIME-Worker-0-Logistic Regression Learner 3:25 :  : Node : Logistic Regression Learner : 3:25 : The algorithm did not reach convergence after the specified number of epochs. Setting the epoch limit higher might result in a better model.
+The covariance matrix could not be calculated because the observed fisher information matrix was singular. Did you properly normalize the numerical features?
+2025-04-12 11:54:00,582 : WARN  : KNIME-Worker-7-Logistic Regression Learner 3:25 :  : Node : Logistic Regression Learner : 3:25 : The algorithm did not reach convergence after the specified number of epochs. Setting the epoch limit higher might result in a better model.
+The covariance matrix could not be calculated because the observed fisher information matrix was singular. Did you properly normalize the numerical features?
+2025-04-12 11:54:00,666 : WARN  : KNIME-Worker-8-Logistic Regression Learner 3:25 :  : Node : Logistic Regression Learner : 3:25 : The algorithm did not reach convergence after the specified number of epochs. Setting the epoch limit higher might result in a better model.
+The covariance matrix could not be calculated because the observed fisher information matrix was singular. Did you properly normalize the numerical features?
+2025-04-12 11:54:00,741 : WARN  : KNIME-Worker-5-Logistic Regression Learner 3:25 :  : Node : Logistic Regression Learner : 3:25 : The algorithm did not reach convergence after the specified number of epochs. Setting the epoch limit higher might result in a better model.
+The covariance matrix could not be calculated because the observed fisher information matrix was singular. Did you properly normalize the numerical features?
+2025-04-12 11:54:00,798 : WARN  : comm-pool-thread-1 :  : JsonRpcErrorResolver :  :  : An unexpected json rpc error occurred
+java.lang.NullPointerException: Cannot invoke "org.knime.core.node.BufferedDataTable.getBufferedTableId()" because "table" is null
+	at org.knime.gateway.impl.node.port.TablePortViewFactory.createPortView(TablePortViewFactory.java:88)
+	at org.knime.gateway.impl.node.port.TablePortViewFactory.createPortView(TablePortViewFactory.java:1)
+	at org.knime.core.webui.node.port.PortViewManager.getPortView(PortViewManager.java:231)
+	at org.knime.core.webui.node.port.PortViewManager.lambda$1(PortViewManager.java:97)
+	at org.knime.core.webui.node.DataServiceManager.lambda$8(DataServiceManager.java:203)
+	at org.knime.core.webui.node.NodePortWrapper$1.getWithContext(NodePortWrapper.java:114)
+	at org.knime.core.webui.node.DataServiceManager.getOrCreateDataService(DataServiceManager.java:203)
+	at org.knime.core.webui.node.DataServiceManager.getRpcDataService(DataServiceManager.java:169)
+	at org.knime.core.webui.node.DataServiceManager.callRpcDataService(DataServiceManager.java:160)
+	at org.knime.gateway.impl.webui.service.DefaultPortService.callPortDataService(DefaultPortService.java:172)
+	at org.knime.gateway.impl.webui.jsonrpc.service.JsonRpcPortServiceWrapper.callPortDataService(JsonRpcPortServiceWrapper.java:85)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.invoke(JsonRpcBasicServer.java:478)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleObject(JsonRpcBasicServer.java:349)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleJsonNodeRequest(JsonRpcBasicServer.java:274)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleRequest(JsonRpcBasicServer.java:242)
+	at org.knime.gateway.impl.jsonrpc.JsonRpcRequestHandler.handle(JsonRpcRequestHandler.java:104)
+	at org.knime.ui.java.browser.lifecycle.Init.lambda$13(Init.java:290)
+	at com.equo.comm.common.MessageHandler.processReceivedEventMessage(MessageHandler.java:131)
+	at com.equo.comm.ee.provider.service.ChromiumService.receiveMessage(ChromiumService.java:98)
+	at com.equo.comm.ee.provider.CommunicationManagerChromiumImpl.receiveMessage(CommunicationManagerChromiumImpl.java:48)
+	at com.equo.chromium.swt.internal.spi.CommRouterHandler.handleRequest(CommRouterHandler.java:33)
+	at com.equo.chromium.swt.internal.spi.CommRouterHandler.lambda$1(CommRouterHandler.java:51)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2025-04-12 11:54:00,836 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: Cannot invoke "org.knime.core.node.BufferedDataTable.getBufferedTableId()" because "table" is null (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 87)
+2025-04-12 11:54:00,840 : ERROR : main :  : KnimeBrowserView :  :  : Error: Cannot invoke "org.knime.core.node.BufferedDataTable.getBufferedTableId()" because "table" is null (source: http://org.knime.core.ui.port/uiext/tableview/TableView.js; line: 899)
+2025-04-12 11:54:00,854 : WARN  : KNIME-Worker-4-Logistic Regression Learner 3:25 :  : Node : Logistic Regression Learner : 3:25 : The algorithm did not reach convergence after the specified number of epochs. Setting the epoch limit higher might result in a better model.
+2025-04-12 11:54:00,947 : WARN  : KNIME-Worker-7-Logistic Regression Learner 3:25 :  : Node : Logistic Regression Learner : 3:25 : The algorithm did not reach convergence after the specified number of epochs. Setting the epoch limit higher might result in a better model.
+The covariance matrix could not be calculated because the observed fisher information matrix was singular. Did you properly normalize the numerical features?
+2025-04-12 11:54:01,010 : WARN  : KNIME-Worker-7-Logistic Regression Learner 3:25 :  : Node : Logistic Regression Learner : 3:25 : The algorithm did not reach convergence after the specified number of epochs. Setting the epoch limit higher might result in a better model.
+The covariance matrix could not be calculated because the observed fisher information matrix was singular. Did you properly normalize the numerical features?
+2025-04-12 11:55:18,030 : WARN  : comm-pool-thread-3 :  : Node : SVM Learner : 3:30 : Class column not set
+2025-04-12 11:55:53,702 : WARN  : main :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:55:54,387 : WARN  : main :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:55:56,475 : WARN  : KNIME-Worker-9-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:55:56,479 : WARN  : KNIME-Worker-10-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:55:59,234 : WARN  : KNIME-Worker-15-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:55:59,240 : WARN  : KNIME-Worker-2-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:55:59,619 : WARN  : KNIME-Worker-10-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:55:59,621 : WARN  : KNIME-Worker-13-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:55:59,918 : WARN  : KNIME-Worker-2-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:55:59,921 : WARN  : KNIME-Worker-11-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:56:00,168 : WARN  : KNIME-Worker-13-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:56:00,171 : WARN  : KNIME-Worker-1-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:56:00,508 : WARN  : KNIME-Worker-11-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:56:00,510 : WARN  : KNIME-Worker-14-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:56:00,815 : WARN  : KNIME-Worker-1-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:56:00,817 : WARN  : KNIME-Worker-12-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:56:01,211 : WARN  : KNIME-Worker-14-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:56:01,213 : WARN  : KNIME-Worker-2-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:56:01,414 : WARN  : KNIME-Worker-12-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:56:01,416 : WARN  : KNIME-Worker-15-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:56:01,656 : WARN  : KNIME-Worker-2-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:56:01,658 : WARN  : KNIME-Worker-11-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:58:27,492 : WARN  : comm-pool-thread-3 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:58:32,769 : WARN  : comm-pool-thread-3 :  : Node : One to Many : 3:36 : Duplicate possible values found. Original column name will be appended
+2025-04-12 11:58:36,875 : WARN  : comm-pool-thread-3 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:58:36,878 : WARN  : comm-pool-thread-3 :  : Node : SVM Predictor : 3:31 : Column 'F_Gender' not found in test data
+2025-04-12 11:58:46,777 : WARN  : main :  : Node : One to Many : 3:36 : Duplicate possible values found. Original column name will be appended
+2025-04-12 11:58:46,779 : WARN  : main :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:58:46,783 : WARN  : main :  : Node : SVM Predictor : 3:31 : Column 'F_Gender' not found in test data
+2025-04-12 11:58:47,468 : WARN  : main :  : Node : One to Many : 3:36 : Duplicate possible values found. Original column name will be appended
+2025-04-12 11:58:47,471 : WARN  : main :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:58:47,472 : WARN  : main :  : Node : SVM Predictor : 3:31 : Column 'F_Gender' not found in test data
+2025-04-12 11:58:49,556 : WARN  : KNIME-Worker-16-X-Partitioner 3:32 :  : Node : One to Many : 3:36 : Duplicate possible values found. Original column name will be appended
+2025-04-12 11:58:49,559 : WARN  : KNIME-Worker-16-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:58:49,560 : WARN  : KNIME-Worker-16-X-Partitioner 3:32 :  : Node : SVM Predictor : 3:31 : Column 'F_Gender' not found in test data
+2025-04-12 11:58:49,561 : WARN  : KNIME-Worker-17-One to Many 3:36 :  : Node : One to Many : 3:36 : Duplicate possible values found. Original column name will be appended
+2025-04-12 11:58:49,573 : WARN  : KNIME-Worker-17-One to Many 3:36 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:58:54,145 : WARN  : KNIME-Worker-18-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 11:58:54,291 : WARN  : KNIME-Worker-18-SVM Learner 3:30 :  : Node : SVM Predictor : 3:31 : Column 'F_Gender' not found in test data
+2025-04-12 12:00:04,595 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:36 valid [3:2, 3:3, 3:4, 3:5, 3:6, 3:7, 3:8, 3:9, 3:10, 3:13, 3:15, 3:16, 3:17, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:34, 3:35] (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 87)
+2025-04-12 12:00:04,598 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 87)
+2025-04-12 12:00:04,599 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:36 valid [3:2, 3:3, 3:4, 3:5, 3:6, 3:7, 3:8, 3:9, 3:10, 3:13, 3:15, 3:16, 3:17, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:34, 3:35] (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 45)
+2025-04-12 12:00:12,059 : WARN  : comm-pool-thread-3 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:04:33,570 : WARN  : comm-pool-thread-3 :  : Node : K Nearest Neighbor : 3:36 : Please choose a valid class column
+2025-04-12 12:04:34,913 : WARN  : KNIME-Worker-21-X-Partitioner 3:37 :  : Node : K Nearest Neighbor : 3:36 : Please choose a valid class column
+2025-04-12 12:04:42,700 : WARN  : main :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:04:42,703 : WARN  : main :  : Node : X-Aggregator : 3:38 : No such column: Prediction (Recurred)
+2025-04-12 12:04:43,746 : WARN  : main :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:04:43,747 : WARN  : main :  : Node : X-Aggregator : 3:38 : No such column: Prediction (Recurred)
+2025-04-12 12:04:45,303 : WARN  : KNIME-Worker-22-K Nearest Neighbor 3:36 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:04:45,322 : WARN  : KNIME-Worker-22-K Nearest Neighbor 3:36 :  : Node : X-Aggregator : 3:38 : No such column: Prediction (Recurred)
+2025-04-12 12:05:18,516 : WARN  : KNIME-Worker-24-X-Partitioner 3:37 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:05:18,520 : WARN  : KNIME-Worker-25-K Nearest Neighbor 3:36 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:05:18,539 : WARN  : KNIME-Worker-27-X-Partitioner 3:37 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:05:18,542 : WARN  : KNIME-Worker-28-K Nearest Neighbor 3:36 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:05:18,557 : WARN  : KNIME-Worker-21-X-Partitioner 3:37 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:05:18,559 : WARN  : KNIME-Worker-22-K Nearest Neighbor 3:36 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:05:18,574 : WARN  : KNIME-Worker-24-X-Partitioner 3:37 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:05:18,575 : WARN  : KNIME-Worker-25-K Nearest Neighbor 3:36 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:05:18,587 : WARN  : KNIME-Worker-27-X-Partitioner 3:37 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:05:18,588 : WARN  : KNIME-Worker-28-K Nearest Neighbor 3:36 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:05:18,597 : WARN  : KNIME-Worker-21-X-Partitioner 3:37 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:05:18,599 : WARN  : KNIME-Worker-22-K Nearest Neighbor 3:36 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:05:18,612 : WARN  : KNIME-Worker-24-X-Partitioner 3:37 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:05:18,613 : WARN  : KNIME-Worker-25-K Nearest Neighbor 3:36 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:05:18,624 : WARN  : KNIME-Worker-27-X-Partitioner 3:37 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:05:18,626 : WARN  : KNIME-Worker-28-K Nearest Neighbor 3:36 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:05:18,640 : WARN  : KNIME-Worker-21-X-Partitioner 3:37 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:05:18,642 : WARN  : KNIME-Worker-22-K Nearest Neighbor 3:36 :  : Node : K Nearest Neighbor : 3:36 : Input table contains more than one non-numeric column; they will be ignored.
+2025-04-12 12:06:02,810 : WARN  : KNIME-Worker-29-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:03,005 : WARN  : KNIME-Worker-25-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:03,011 : WARN  : KNIME-Worker-26-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:03,277 : WARN  : KNIME-Worker-29-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:03,278 : WARN  : KNIME-Worker-23-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:03,580 : WARN  : KNIME-Worker-26-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:03,581 : WARN  : KNIME-Worker-22-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:03,964 : WARN  : KNIME-Worker-23-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:03,969 : WARN  : KNIME-Worker-28-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:04,215 : WARN  : KNIME-Worker-22-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:04,217 : WARN  : KNIME-Worker-25-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:04,447 : WARN  : KNIME-Worker-28-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:04,448 : WARN  : KNIME-Worker-29-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:04,707 : WARN  : KNIME-Worker-25-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:04,709 : WARN  : KNIME-Worker-26-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:04,975 : WARN  : KNIME-Worker-29-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:04,977 : WARN  : KNIME-Worker-23-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:05,152 : WARN  : KNIME-Worker-26-X-Partitioner 3:32 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:05,155 : WARN  : KNIME-Worker-21-SVM Learner 3:30 :  : Node : SVM Learner : 3:30 : Rejecting 11 column(s) due to incompatible type: [Gender, Hx Radiothreapy, Adenopathy, Pathology, ... (remainder truncated)]
+2025-04-12 12:06:05,393 : ERROR : KNIME-Worker-22-CSV Writer 3:33 :  : Node : CSV Writer : 3:33 : Execute failed: Output file '/home/florent/Documents/projet/analysis/resultat_SVM.csv' exists and must not be overwritten due to user settings.
+java.io.IOException: Output file '/home/florent/Documents/projet/analysis/resultat_SVM.csv' exists and must not be overwritten due to user settings.
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:217)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.writeToFile(CSVWriter2NodeModel.java:167)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:147)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:1)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: java.nio.file.FileAlreadyExistsException: /home/florent/Documents/projet/analysis/resultat_SVM.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(Unknown Source)
+	at org.knime.filehandling.core.fs.local.fs.LocalFileSystemProvider.newByteChannel(LocalFileSystemProvider.java:148)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(Unknown Source)
+	at java.base/java.nio.file.Files.newOutputStream(Unknown Source)
+	at org.knime.filehandling.core.connections.FSFiles.newOutputStream(FSFiles.java:146)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:214)
+	... 16 more
