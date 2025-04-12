@@ -1,0 +1,150 @@
+2025-04-12 11:06:19,321 : WARN  : ModalContext :  : Node : Domain Calculator : 3:16 : Input table does not contain the following column(s) selected in the Min/Max value panel: "TIME OBSERVATIONS STARTED_time"
+2025-04-12 11:06:19,324 : WARN  : ModalContext :  : Node : Domain Calculator : 3:16 : Input table does not contain the following column(s) selected in the Min/Max value panel: "TIME OBSERVATIONS STARTED_time"
+2025-04-12 11:06:32,618 : WARN  : comm-pool-thread-1 :  : Node : CSV Reader : 3:1 : Please specify a file
+2025-04-12 11:07:59,126 : WARN  : main :  : Node : X-Aggregator : 3:2 : Selected columns 'Recurred' and 'Response' as prediction and target columns
+2025-04-12 11:09:47,961 : WARN  : KNIME-Worker-2-X-Aggregator 3:2 :  : NodeContainer : X-Aggregator : 3:2 : Encountered loop-end without corresponding head!
+org.knime.core.node.workflow.IllegalFlowObjectStackException: Encountered loop-end without corresponding head!
+	at org.knime.core.node.workflow.WorkflowManager.doBeforeExecution(WorkflowManager.java:3491)
+	at org.knime.core.node.workflow.NodeContainer.notifyParentExecuteStart(NodeContainer.java:660)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:168)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+2025-04-12 11:10:09,922 : WARN  : KNIME-Worker-2-X-Aggregator 3:2 :  : NodeContainer : X-Aggregator : 3:2 : Encountered loop-end without corresponding head!
+org.knime.core.node.workflow.IllegalFlowObjectStackException: Encountered loop-end without corresponding head!
+	at org.knime.core.node.workflow.WorkflowManager.doBeforeExecution(WorkflowManager.java:3491)
+	at org.knime.core.node.workflow.NodeContainer.notifyParentExecuteStart(NodeContainer.java:660)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:168)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+2025-04-12 11:16:05,978 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:1 valid [3:2, 3:3] (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 87)
+2025-04-12 11:16:05,979 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 87)
+2025-04-12 11:16:05,980 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:1 valid [3:2, 3:3] (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 45)
+2025-04-12 11:16:13,894 : WARN  : comm-pool-thread-1 :  : Node : File Reader : 3:4 : Please specify a file
+2025-04-12 11:17:28,702 : WARN  : KNIME-Worker-3-X-Aggregator 3:2 :  : NodeContainer : X-Aggregator : 3:2 : Encountered loop-end without corresponding head!
+org.knime.core.node.workflow.IllegalFlowObjectStackException: Encountered loop-end without corresponding head!
+	at org.knime.core.node.workflow.WorkflowManager.doBeforeExecution(WorkflowManager.java:3491)
+	at org.knime.core.node.workflow.NodeContainer.notifyParentExecuteStart(NodeContainer.java:660)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:168)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+2025-04-12 11:17:29,805 : WARN  : KNIME-Worker-3-X-Aggregator 3:2 :  : NodeContainer : X-Aggregator : 3:2 : Encountered loop-end without corresponding head!
+org.knime.core.node.workflow.IllegalFlowObjectStackException: Encountered loop-end without corresponding head!
+	at org.knime.core.node.workflow.WorkflowManager.doBeforeExecution(WorkflowManager.java:3491)
+	at org.knime.core.node.workflow.NodeContainer.notifyParentExecuteStart(NodeContainer.java:660)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:168)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+2025-04-12 11:17:30,351 : WARN  : KNIME-Worker-3-X-Aggregator 3:2 :  : NodeContainer : X-Aggregator : 3:2 : Encountered loop-end without corresponding head!
+org.knime.core.node.workflow.IllegalFlowObjectStackException: Encountered loop-end without corresponding head!
+	at org.knime.core.node.workflow.WorkflowManager.doBeforeExecution(WorkflowManager.java:3491)
+	at org.knime.core.node.workflow.NodeContainer.notifyParentExecuteStart(NodeContainer.java:660)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:168)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+2025-04-12 11:17:30,543 : WARN  : KNIME-Worker-3-X-Aggregator 3:2 :  : NodeContainer : X-Aggregator : 3:2 : Encountered loop-end without corresponding head!
+org.knime.core.node.workflow.IllegalFlowObjectStackException: Encountered loop-end without corresponding head!
+	at org.knime.core.node.workflow.WorkflowManager.doBeforeExecution(WorkflowManager.java:3491)
+	at org.knime.core.node.workflow.NodeContainer.notifyParentExecuteStart(NodeContainer.java:660)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:168)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+2025-04-12 11:18:11,467 : WARN  : comm-pool-thread-1 :  : Node : Random Forest Learner : 3:6 : No configuration available
+2025-04-12 11:18:47,731 : WARN  : main :  : Node : Random Forest Predictor : 3:5 : Required data column "Age" does not exist in table
+2025-04-12 11:18:48,302 : WARN  : main :  : Node : Random Forest Predictor : 3:5 : Required data column "Age" does not exist in table
+2025-04-12 11:19:19,790 : WARN  : KNIME-Worker-4-X-Aggregator 3:2 :  : NodeContainer : X-Aggregator : 3:2 : Encountered loop-end without corresponding head!
+org.knime.core.node.workflow.IllegalFlowObjectStackException: Encountered loop-end without corresponding head!
+	at org.knime.core.node.workflow.WorkflowManager.doBeforeExecution(WorkflowManager.java:3491)
+	at org.knime.core.node.workflow.NodeContainer.notifyParentExecuteStart(NodeContainer.java:660)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:168)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+2025-04-12 11:19:19,802 : WARN  : KNIME-Worker-4-X-Aggregator 3:2 :  : Node : Random Forest Predictor : 3:5 : Required data column "Age" does not exist in table
+2025-04-12 11:19:29,252 : WARN  : main :  : Node : Random Forest Predictor : 3:5 : Required data column "Age" does not exist in table
+2025-04-12 11:22:46,578 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:12 valid [3:2, 3:3, 3:4, 3:5, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:13, 3:14] (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 87)
+2025-04-12 11:22:46,580 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 87)
+2025-04-12 11:22:46,581 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:12 valid [3:2, 3:3, 3:4, 3:5, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:13, 3:14] (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 45)
+2025-04-12 11:23:04,809 : WARN  : comm-pool-thread-1 :  : Node : Decision Tree Learner : 3:13 : Guessing target column: "Recurred".
+2025-04-12 11:23:44,522 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Error captured hook ::  
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 87)
+2025-04-12 11:24:54,199 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:22 valid [3:2, 3:3, 3:4, 3:5, 3:6, 3:7, 3:8, 3:9, 3:10, 3:13, 3:15, 3:16, 3:17, 3:18, 3:19, 3:20, 3:21] (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 87)
+2025-04-12 11:24:54,203 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 87)
+2025-04-12 11:24:54,209 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:22 valid [3:2, 3:3, 3:4, 3:5, 3:6, 3:7, 3:8, 3:9, 3:10, 3:13, 3:15, 3:16, 3:17, 3:18, 3:19, 3:20, 3:21] (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 45)
+2025-04-12 11:25:10,696 : WARN  : comm-pool-thread-1 :  : Node : Naive Bayes Learner : 3:16 : Please define the classification column
+2025-04-12 11:25:16,305 : WARN  : KNIME-Worker-19-X-Partitioner 3:20 :  : Node : Naive Bayes Learner : 3:16 : Please define the classification column
+2025-04-12 11:28:32,940 : WARN  : comm-pool-thread-1 :  : Node : CSV Writer : 3:21 : Please specify a file

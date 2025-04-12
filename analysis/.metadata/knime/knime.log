@@ -732,3 +732,50 @@ Caused by: java.time.format.DateTimeParseException: Text '16:05:00' could not be
 2025-04-11 18:06:44,121 : WARN  : main :  : Node : Domain Calculator : 3:16 : Input table does not contain the following column(s) selected in the Min/Max value panel: "TIME OBSERVATIONS STARTED_time"
 2025-04-11 18:06:50,910 : WARN  : main :  : Node : Domain Calculator : 3:16 : Input table does not contain the following column(s) selected in the Min/Max value panel: "TIME OBSERVATIONS STARTED_time"
 2025-04-11 18:06:52,031 : WARN  : main :  : Node : Domain Calculator : 3:16 : Input table does not contain the following column(s) selected in the Min/Max value panel: "TIME OBSERVATIONS STARTED_time"
+2025-04-12 11:04:35,578 : ERROR : main :  : ProjectAPI :  :  : Workflow with ID 'projet_f8853ad7-961e-4472-b090-13e685b91444' couldn't be loaded. Workflow closed.
+2025-04-12 11:04:35,774 : WARN  : comm-pool-thread-1 :  : JsonRpcErrorResolver :  :  : An unexpected json rpc error occurred
+java.util.NoSuchElementException: Workflow project for ID "projet_f8853ad7-961e-4472-b090-13e685b91444" not found.
+	at org.knime.gateway.impl.service.util.DefaultServiceUtil.lambda$0(DefaultServiceUtil.java:126)
+	at java.base/java.util.Optional.orElseThrow(Unknown Source)
+	at org.knime.gateway.impl.service.util.DefaultServiceUtil.getRootWorkflowManager(DefaultServiceUtil.java:125)
+	at org.knime.gateway.impl.service.util.DefaultServiceUtil.getWorkflowManager(DefaultServiceUtil.java:155)
+	at org.knime.gateway.impl.webui.WorkflowMiddleware$WorkflowState.<init>(WorkflowMiddleware.java:434)
+	at org.knime.gateway.impl.webui.WorkflowMiddleware.createWorkflowStateAndEventuallyClearCache(WorkflowMiddleware.java:388)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(Unknown Source)
+	at org.knime.gateway.impl.webui.WorkflowMiddleware.getWorkflowState(WorkflowMiddleware.java:384)
+	at org.knime.gateway.impl.webui.WorkflowMiddleware.buildWorkflowSnapshotEnt(WorkflowMiddleware.java:188)
+	at org.knime.gateway.impl.webui.service.DefaultWorkflowService.getWorkflow(DefaultWorkflowService.java:125)
+	at org.knime.gateway.impl.webui.jsonrpc.service.JsonRpcWorkflowServiceWrapper.getWorkflow(JsonRpcWorkflowServiceWrapper.java:124)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.invoke(JsonRpcBasicServer.java:478)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleObject(JsonRpcBasicServer.java:349)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleJsonNodeRequest(JsonRpcBasicServer.java:274)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleRequest(JsonRpcBasicServer.java:242)
+	at org.knime.gateway.impl.jsonrpc.JsonRpcRequestHandler.handle(JsonRpcRequestHandler.java:104)
+	at org.knime.ui.java.browser.lifecycle.Init.lambda$13(Init.java:290)
+	at com.equo.comm.common.MessageHandler.processReceivedEventMessage(MessageHandler.java:131)
+	at com.equo.comm.ee.provider.service.ChromiumService.receiveMessage(ChromiumService.java:98)
+	at com.equo.comm.ee.provider.CommunicationManagerChromiumImpl.receiveMessage(CommunicationManagerChromiumImpl.java:48)
+	at com.equo.chromium.swt.internal.spi.CommRouterHandler.handleRequest(CommRouterHandler.java:33)
+	at com.equo.chromium.swt.internal.spi.CommRouterHandler.lambda$1(CommRouterHandler.java:51)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2025-04-12 11:04:35,900 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: Workflow project for ID "projet_f8853ad7-961e-4472-b090-13e685b91444" not found. (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 87)
+2025-04-12 11:04:35,911 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c lifecycle::loadWorkflow failed to load workflow 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 87)
+2025-04-12 11:05:06,273 : WARN  : main :  : VMFileLocker :  :  : Directory '/home/florent/Documents/projet/analysis/Fouille' does not exist (any more), cannot unlock it

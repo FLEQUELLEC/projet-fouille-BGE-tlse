@@ -1,31 +1,22 @@
 {
   "version" : "5.4.3.v202503031608",
   "projects" : [ {
-    "name" : "projet",
+    "name" : "Fouille",
     "active" : true,
     "origin" : {
       "providerId" : "local",
       "spaceId" : "local",
-      "relativePath" : "Knime/projet"
+      "relativePath" : "Fouille"
     }
   } ],
   "mostRecentlyUsedProjects" : [ {
-    "name" : "Building a Simple Classifier",
-    "timeUsed" : "2025-04-11T16:47:32.01800601+02:00",
+    "name" : "Fouille",
+    "timeUsed" : "2025-04-12T11:04:46.161655735+02:00",
     "origin" : {
       "providerId" : "local",
       "spaceId" : "local",
       "projectType" : "WORKFLOW",
-      "relativePath" : "Knime/Basic Examples/Building a Simple Classifier"
-    }
-  }, {
-    "name" : "projet",
-    "timeUsed" : "2025-04-11T16:51:06.316595298+02:00",
-    "origin" : {
-      "providerId" : "local",
-      "spaceId" : "local",
-      "projectType" : "WORKFLOW",
-      "relativePath" : "Knime/projet"
+      "relativePath" : "Fouille"
     }
   } ]
 }

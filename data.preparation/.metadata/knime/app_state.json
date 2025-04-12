@@ -1,0 +1,22 @@
+{
+  "version" : "5.4.3.v202503031608",
+  "projects" : [ {
+    "name" : "projet",
+    "active" : true,
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "relativePath" : "Knime/projet"
+    }
+  } ],
+  "mostRecentlyUsedProjects" : [ {
+    "name" : "projet",
+    "timeUsed" : "2025-04-12T11:06:19.342078691+02:00",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "Knime/projet"
+    }
+  } ]
+}

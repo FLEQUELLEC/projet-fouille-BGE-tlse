@@ -1,0 +1,4 @@
+/home/florent/Documents/projet/analysis/resultat_tree.csv
+/home/florent/Documents/projet/analysis/resultat_forest.csv
+/home/florent/Documents/projet/analysis/resultat_baiesien.csv
+/home/florent/Documents/projet/data/thyroid_data.csv
