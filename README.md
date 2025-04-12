@@ -62,8 +62,9 @@ L’objectif principal est d’exploiter des techniques de fouille de données s
 ## 📜 Jeu de données
 
 Données issues de :  
-> *Differentiated Thyroid Cancer Recurrence*  
-> Auteur : Joe Beach Capital – [Kaggle](https://www.kaggle.com/datasets/joebeachcapital/differentiated-thyroid-cancer-recurrence)
+> *Thyroid Cancer Recurrence Dataset (modifié)*  
+> Auteur de la version originale : Joe Beach Capital – [Kaggle](https://www.kaggle.com/datasets/joebeachcapital/differentiated-thyroid-cancer-recurrence)  
+> Version modifiée par : Aneesha Anto – [Kaggle](https://www.kaggle.com/datasets/aneevinay/thyroid-cancer-recurrence-dataset?resource=download)
 
 Ce jeu de données a été filtré et nettoyé pour se concentrer sur l’analyse de la récidive post-traitement.
 
