@@ -18,7 +18,7 @@
         <entry key="columnFractionPerTree" type="xdouble" value="1.0"/>
         <entry key="columnAbsolutePerTree" type="xint" value="10"/>
         <entry key="isUseDifferentAttributesAtEachNode" type="xboolean" value="true"/>
-        <entry key="nrModels" type="xint" value="100"/>
+        <entry key="nrModels" type="xint" value="500"/>
         <entry key="splitCriterion" type="xstring" value="InformationGainRatio"/>
         <entry key="missingValueHandling" type="xstring" value="XGBoost"/>
         <entry key="useAverageSplitPoints" type="xboolean" value="true"/>
@@ -27,7 +27,7 @@
         <config key="columnFilterConfig">
             <entry key="filter-type" type="xstring" value="STANDARD"/>
             <config key="included_names">
-                <entry key="array-size" type="xint" value="13"/>
+                <entry key="array-size" type="xint" value="12"/>
                 <entry key="0" type="xstring" value="Age"/>
                 <entry key="1" type="xstring" value="Gender"/>
                 <entry key="2" type="xstring" value="Hx Radiothreapy"/>
@@ -40,7 +40,6 @@
                 <entry key="9" type="xstring" value="M"/>
                 <entry key="10" type="xstring" value="Stage"/>
                 <entry key="11" type="xstring" value="Response"/>
-                <entry key="12" type="xstring" value="fold #"/>
             </config>
             <config key="excluded_names">
                 <entry key="array-size" type="xint" value="0"/>
@@ -103,7 +102,7 @@
             <entry key="index" type="xint" value="3"/>
             <entry key="port_spec_class" type="xstring" value="org.knime.base.node.mine.treeensemble2.model.TreeEnsembleModelPortObjectSpec"/>
             <entry key="port_object_class" type="xstring" value="org.knime.base.node.mine.treeensemble2.model.TreeEnsembleModelPortObject"/>
-            <entry key="port_object_summary" type="xstring" value="100 classifiers on 12 attributes"/>
+            <entry key="port_object_summary" type="xstring" value="500 classifiers on 12 attributes"/>
             <entry key="port_spec_location" type="xstring" value="spec/spec.zip"/>
             <entry key="port_object_location" type="xstring" value="object/portobject.zip"/>
             <entry key="port_dir_location" type="xstring" value="port_3"/>

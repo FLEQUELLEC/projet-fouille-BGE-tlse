@@ -17,9 +17,9 @@
             {
                 "id": "org.knime.base.node.meta.xvalidation.AggregateOutputNodeFactory",
                 "nodename": "X-Aggregator",
-                "nrexecs": 70,
+                "nrexecs": 160,
                 "nrfails": 7,
-                "exectime": 138,
+                "exectime": 286,
                 "nrcreated": 1,
                 "nrsettingsChanged": 10,
                 "successor": "org.knime.base.node.mine.treeensemble2.node.randomforest.predictor.classification.RandomForestClassificationPredictorNodeFactory2",
@@ -28,11 +28,11 @@
             {
                 "id": "org.knime.base.node.meta.xvalidation.XValidatePartitionerFactory",
                 "nodename": "X-Partitioner",
-                "nrexecs": 70,
+                "nrexecs": 161,
                 "nrfails": 0,
-                "exectime": 463,
+                "exectime": 1192,
                 "nrcreated": 1,
-                "nrsettingsChanged": 0,
+                "nrsettingsChanged": 2,
                 "successor": "org.knime.base.node.preproc.columntrans2.One2ManyCol2NodeFactory",
                 "successornodename": "One to Many"
             },
@@ -44,15 +44,15 @@
                 "exectime": 33,
                 "nrcreated": 1,
                 "nrsettingsChanged": 2,
-                "successor": "org.knime.base.node.meta.xvalidation.XValidatePartitionerFactory",
-                "successornodename": "X-Partitioner"
+                "successor": "org.knime.base.node.preproc.filter.column.DataColumnSpecFilterNodeFactory",
+                "successornodename": "Column Filter"
             },
             {
                 "id": "org.knime.base.node.mine.treeensemble2.node.randomforest.predictor.classification.RandomForestClassificationPredictorNodeFactory2",
                 "nodename": "Random Forest Predictor",
-                "nrexecs": 10,
+                "nrexecs": 50,
                 "nrfails": 0,
-                "exectime": 231,
+                "exectime": 6661,
                 "nrcreated": 1,
                 "nrsettingsChanged": 1,
                 "successor": "org.knime.base.node.meta.xvalidation.AggregateOutputNodeFactory",
@@ -61,20 +61,20 @@
             {
                 "id": "org.knime.base.node.mine.treeensemble2.node.randomforest.learner.classification.RandomForestClassificationLearnerNodeFactory2",
                 "nodename": "Random Forest Learner",
-                "nrexecs": 10,
-                "nrfails": 0,
-                "exectime": 1686,
+                "nrexecs": 50,
+                "nrfails": 1,
+                "exectime": 88105,
                 "nrcreated": 1,
-                "nrsettingsChanged": 2,
+                "nrsettingsChanged": 10,
                 "successor": "org.knime.base.node.mine.treeensemble2.node.randomforest.predictor.classification.RandomForestClassificationPredictorNodeFactory2",
                 "successornodename": "Random Forest Predictor"
             },
             {
                 "id": "org.knime.base.node.stats.viz.extended.ExtendedStatisticsNodeFactory",
                 "nodename": "Statistics",
-                "nrexecs": 7,
+                "nrexecs": 16,
                 "nrfails": 0,
-                "exectime": 1103,
+                "exectime": 2162,
                 "nrcreated": 1,
                 "nrsettingsChanged": 0,
                 "successor": "org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeFactory",
@@ -83,11 +83,11 @@
             {
                 "id": "org.knime.base.node.mine.decisiontree2.learner2.DecisionTreeLearnerNodeFactory3",
                 "nodename": "Decision Tree Learner",
-                "nrexecs": 10,
+                "nrexecs": 40,
                 "nrfails": 0,
-                "exectime": 180,
+                "exectime": 564,
                 "nrcreated": 1,
-                "nrsettingsChanged": 0,
+                "nrsettingsChanged": 7,
                 "successor": "org.knime.base.node.mine.decisiontree2.predictor2.DecTreePredictorNodeFactory",
                 "successornodename": "Decision Tree Predictor"
             },
@@ -105,9 +105,9 @@
             {
                 "id": "org.knime.base.node.mine.decisiontree2.predictor2.DecTreePredictorNodeFactory",
                 "nodename": "Decision Tree Predictor",
-                "nrexecs": 10,
+                "nrexecs": 40,
                 "nrfails": 0,
-                "exectime": 224,
+                "exectime": 1000,
                 "nrcreated": 1,
                 "nrsettingsChanged": 0,
                 "successor": "org.knime.base.node.meta.xvalidation.AggregateOutputNodeFactory",
@@ -138,20 +138,20 @@
             {
                 "id": "org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeFactory",
                 "nodename": "CSV Writer",
-                "nrexecs": 6,
-                "nrfails": 1,
-                "exectime": 110,
+                "nrexecs": 7,
+                "nrfails": 2,
+                "exectime": 241,
                 "nrcreated": 1,
-                "nrsettingsChanged": 12,
+                "nrsettingsChanged": 14,
                 "successor": "n/a",
                 "successornodename": "n/a"
             },
             {
                 "id": "org.knime.base.node.mine.regression.logistic.predictor.LogisticRegressionPredictorNodeFactory",
                 "nodename": "Logistic Regression Predictor",
-                "nrexecs": 10,
+                "nrexecs": 30,
                 "nrfails": 0,
-                "exectime": 402,
+                "exectime": 690,
                 "nrcreated": 1,
                 "nrsettingsChanged": 0,
                 "successor": "org.knime.base.node.meta.xvalidation.AggregateOutputNodeFactory",
@@ -160,11 +160,11 @@
             {
                 "id": "org.knime.base.node.mine.regression.logistic.learner4.LogRegLearnerNodeFactory4",
                 "nodename": "Logistic Regression Learner",
-                "nrexecs": 10,
+                "nrexecs": 31,
                 "nrfails": 0,
-                "exectime": 857,
+                "exectime": 4000,
                 "nrcreated": 1,
-                "nrsettingsChanged": 0,
+                "nrsettingsChanged": 2,
                 "successor": "org.knime.base.node.mine.regression.logistic.predictor.LogisticRegressionPredictorNodeFactory",
                 "successornodename": "Logistic Regression Predictor"
             },
@@ -211,6 +211,17 @@
                 "nrsettingsChanged": 2,
                 "successor": "org.knime.base.node.meta.xvalidation.AggregateOutputNodeFactory",
                 "successornodename": "X-Aggregator"
+            },
+            {
+                "id": "org.knime.base.node.preproc.filter.column.DataColumnSpecFilterNodeFactory",
+                "nodename": "Column Filter",
+                "nrexecs": 2,
+                "nrfails": 0,
+                "exectime": 4,
+                "nrcreated": 2,
+                "nrsettingsChanged": 2,
+                "successor": "org.knime.base.node.meta.xvalidation.XValidatePartitionerFactory",
+                "successornodename": "X-Partitioner"
             }
         ],
         "metaNodes": {
@@ -218,23 +229,23 @@
         "wrappedNodes": {
         },
         "createdVia": {
-            "WEB_UI": 19
+            "WEB_UI": 21
         }
     },
-    "uptime": 1188283,
-    "workflowsOpened": 2,
+    "uptime": 1129764,
+    "workflowsOpened": 3,
     "remoteWorkflowsOpened": 0,
     "workflowsCreated": 0,
     "remoteWorkflowsCreated": 0,
     "columnarStorageWorkflowsOpened": 0,
     "workflowsImported": 0,
-    "workflowsExported": 0,
+    "workflowsExported": 1,
     "webUIPerspectiveSwitches": 0,
     "javaUIPerspectiveSwitches": 0,
     "lastUsedPerspective": "none",
-    "launches": 2,
+    "launches": 3,
     "lastApplicationID": "org.knime.product.KNIME_APPLICATION",
-    "timeSinceLastStart": 876101,
+    "timeSinceLastStart": 1012727,
     "crashes": 0,
     "properlyShutDown": true
 }

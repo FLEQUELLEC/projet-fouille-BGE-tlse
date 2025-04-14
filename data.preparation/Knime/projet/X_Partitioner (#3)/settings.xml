@@ -15,7 +15,7 @@
             <entry key="type" type="xstring" value="variable"/>
             <entry key="name" type="xstring" value="maxIterations"/>
             <entry key="class" type="xstring" value="INTEGER"/>
-            <entry key="value" type="xint" value="0"/>
+            <entry key="value" type="xint" value="-1"/>
         </config>
         <config key="Loop_Execute_3">
             <entry key="type" type="xstring" value="loopcontext_execute"/>
@@ -38,10 +38,10 @@
     </config>
     <config key="model">
         <entry key="validations" type="xshort" value="10"/>
-        <entry key="randomSampling" type="xboolean" value="true"/>
+        <entry key="randomSampling" type="xboolean" value="false"/>
         <entry key="leaveOneOut" type="xboolean" value="false"/>
-        <entry key="stratifiedSampling" type="xboolean" value="false"/>
-        <entry key="classColumn" type="xstring" isnull="true" value=""/>
+        <entry key="stratifiedSampling" type="xboolean" value="true"/>
+        <entry key="classColumn" type="xstring" value="Recurred"/>
         <entry key="useRandomSeed" type="xboolean" value="false"/>
         <entry key="randomSeed" type="xlong" value="0"/>
     </config>
@@ -79,6 +79,6 @@
     </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" value="filestore"/>
-        <entry key="file_store_id" type="xstring" value="eba7a27f-8271-4c0f-a897-6c064c3a4cf0"/>
+        <entry key="file_store_id" type="xstring" value="8e0ff68f-4833-4e48-82d0-9600a3b1fa9a"/>
     </config>
 </config>
