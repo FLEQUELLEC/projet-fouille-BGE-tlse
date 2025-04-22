@@ -5,17 +5,19 @@
 
 ---
 
-## 🌟 Objectifs de l'analyse
+## 🌟 Objectifs de l’analyse
 
-L’objectif principal est d’exploiter des techniques de fouille de données supervisées et non-supervisées pour explorer les facteurs liés à la récidive du cancer. Ce projet se concentre sur :
+L’objectif principal de ce projet est d’exploiter des méthodes de **fouille de données supervisées et non-supervisées** afin d’explorer les facteurs associés à la **récidive du cancer de la thyroïde** après traitement.
 
-- L’analyse des **profils cliniques et pathologiques** des patients
-- L’identification de **facteurs de risque potentiels**
-- L’utilisation d’algorithmes de **classification** pour prédire la récidive
-- L’exploration de **groupes de patients similaires** par **clustering**
-- La visualisation des résultats pour faciliter l’interprétation médicale
+Plus précisément, le projet vise à :
 
-> Cette analyse est exploratoire et les objectifs seront amenés à évoluer avec l’avancement du projet.
+- 🧬 **Analyser les profils cliniques et pathologiques** des patients afin d’identifier les caractéristiques individuelles majeures
+- ⚠️ **Détecter des facteurs de risque potentiels** liés à la récidive (âge, stade tumoral, réponse au traitement, etc.)
+- 🧠 **Appliquer des algorithmes de classification** (arbre, forêt, bayésien) pour tenter de **prédire l’occurrence de récidive**
+- 🧩 **Regrouper les patients par similarité** grâce à des techniques de **clustering non-supervisé** (ACM + k-means)
+
+> Cette analyse se veut **exploratoire**, et les objectifs pourront être ajustés ou affinés au fur et à mesure de l’avancement du projet.
+
 
 ---
 
