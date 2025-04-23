@@ -1,0 +1,835 @@
+# an : pour chaque ech
+
+# anscombe -> traditional statistical properties (mean, variance, correlation, 
+# regression line, etc.), yet are quite different.
+
+# 2 Le quatuor d'Ascombe
+
+```{r}
+
+##anscombe
+# x1	x2	x3	x4	y1	y2	y3	y4
+# 10	10	10	8	8.04	9.14	7.46	6,58
+# 8	8	8	8	6,95	8.14	6,77	5,76
+# 13	13	13	8	7,58	8,74	12,74	7,71
+# 9	9	9	8	8,81	8,77	7.11	8,84
+# 11	11	11	8	8.33	9.26	7,81	8.47
+# 14	14	14	8	9,96	8.10	8,84	7.04
+# 6	6	6	8	7.24	6.13	6.08	5,25
+# 4	4	4	19	4.26	3.10	5.39	12,5
+# 12	12	12	8	10,84	9.13	8h15	5.56
+# 7	7	7	8	4,82	7.26	6.42	7,91
+# 5	5	5	8	5,68	4,74	5,73	6,89
+# ```
+
+
+## crée un tab qui montre que abscombe même prop
+```
+
+
+```{r}
+
+tab <- matrix(NA, 5, 4)
+colnames(tab) <- 1:4
+rownames(tab) <- c("var(x)", "mean(x)",
+                   "var(y)", "mean(y)",
+                   "cor(x,y)")
+
+for (i in 1:4)
+  tab[, i] <- c(var(anscombe[, i]),
+                mean(anscombe[, i]),
+                var(anscombe[, i+4]),
+                mean(anscombe[, i+4]),
+                cor(anscombe[, i], anscombe[, i+4]))
+
+```
+
+## graphs -> mais dif fondamentales ds nos datas 
+
+```{r}
+ff <- y ~ x
+
+mods <- setNames(as.list(1:4), paste0("lm", 1:4))
+
+par(mfrow = c(2, 2), mar = c(4, 4, 1, 1))
+for (i in 1:4) {
+  ff[2:3] <- lapply(paste0(c("y","x"), i), as.name)
+  plot(ff, data = anscombe, pch = 19, xlim = c(3, 19), ylim = c(3, 13))
+  mods[[i]] <- lm(ff, data = anscombe)
+  abline(mods[[i]])
+}
+# crée modèle lin pour chacunes des var pour obetenir une sorte
+# de coef directeur avec abline
+```
+
+# 3 L'exemple de tracé MA
+
+```{r}
+
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("rpx")
+
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("MSnbase")
+
+
+#gpt
+# if (!require("BiocManager", quietly = TRUE))
+#     install.packages("BiocManager")
+# 
+# BiocManager::install("MSnbase", ask = FALSE)
+
+#gpt
+## Loading F063721.dat-mztab.txt from cache.
+library("MSnbase")
+
+
+library("rpx")
+px1 <- PXDataset("PXD000001")
+## Loading PXD000001 from cache.
+mztab <- pxget(px1, "F063721.dat-mztab.txt") # 
+
+## Loading F063721.dat-mztab.txt from cache.
+library("MSnbase")
+## here, we need to specify the (old) mzTab version 0.9
+qnt <- readMzTabData(mztab, what = "PEP", version = "0.9")
+sampleNames(qnt) <- reporterNames(TMT6)
+qnt <- filterNA(qnt)
+## may be combineFeatuers
+
+spikes <- c("P02769", "P00924", "P62894", "P00489")
+protclasses <- as.character(fData(qnt)$accession)
+protclasses[!protclasses %in% spikes] <- "Background"
+
+
+madata42 <- data.frame(A = rowMeans(log(exprs(qnt[, c(4, 2)]), 10)),
+                       M = log(exprs(qnt)[, 4], 2) - log(exprs(qnt)[, 2], 2),
+                       data = rep("4vs2", nrow(qnt)),
+                       protein = fData(qnt)$accession,
+                       class = factor(protclasses))
+
+madata62 <- data.frame(A = rowMeans(log(exprs(qnt[, c(6, 2)]), 10)),
+                       M = log(exprs(qnt)[, 6], 2) - log(exprs(qnt)[, 2], 2),
+                       data = rep("6vs2", nrow(qnt)),
+                       protein = fData(qnt)$accession,
+                       class = factor(protclasses))
+
+
+madata <- rbind(madata42, madata62)
+
+
+
+```
+
+# 3.1 Le système de tracé traditionnel
+
+```{r}
+
+par(mfrow = c(1, 2))
+plot(M ~ A, data = madata42, main = "4vs2",
+     xlab = "A", ylab = "M", col = madata62$class)
+plot(M ~ A, data = madata62, main = "6vs2",
+     xlab = "A", ylab = "M", col = madata62$class)
+levels(madata62$class)
+
+
+
+colors <- c("red", "blue", "green","yellow")  # Exemple de couleurs pour 3 niveaux
+
+
+####gpt legend
+# Créer le graphique
+plot(M ~ A, data = madata62, main = "6vs2",
+     xlab = "A", ylab = "M", col = colors[madata62$class])
+
+# Ajouter une légende avec les couleurs associées aux niveaux de 'class'
+legend("topright",                               # Position de la légende
+       legend = levels(madata62$class),           # Les niveaux de la colonne 'class'
+       fill = colors,                             # Les couleurs associées à ces niveaux
+       title = "Classe",                          # Titre de la légende
+       cex = 0.8)                                  # Taille du texte de la légende
+########
+
+# an : + gpt
+# 
+# Axe des abscisses (x) : A, qui représente la moyenne de l'intensité d'expression des protéines (log10 des intensités pour les paires d'échantillons comparées).
+# Axe des ordonnées (y) : M, qui correspond au log2 fold change entre les deux échantillons comparés.
+# Concrètement :
+# 
+# Graphique 1 ("4vs2") compare les échantillons 4 et 2.
+
+
+```
+
+# 3.2treillis # an meme graph différente représentation
+
+```{r}
+
+library("lattice")
+latma <- xyplot(M ~ A | data, data = madata,
+                groups = madata$class,
+                auto.key = TRUE)
+print(latma)
+
+```
+
+# 3.3ggplot2 # an pareil en gg plot
+
+```{r}
+library("ggplot2")
+ggma <- ggplot(aes(x = A, y = M, colour = class), data = madata,
+               colour = class) +
+    geom_point() +
+    facet_grid(. ~ data)
+print(ggma)
+
+```
+
+
+# 3.4 Personnalisation # an meme graph différente représentation
+```{r}
+library("RColorBrewer")
+bcols <- brewer.pal(4, "Set1")
+cls <- c("Background" = "#12121230",
+         "P02769" = bcols[1],
+         "P00924" = bcols[2],
+         "P62894" = bcols[3],
+         "P00489" = bcols[4])
+ggma2 <- ggplot(aes(x = A, y = M, colour = class),
+                data = madata) + geom_point(shape = 19) +
+    facet_grid(. ~ data) + scale_colour_manual(values = cls) +
+    guides(colour = guide_legend(override.aes = list(alpha = 1)))
+print(ggma2)
+```
+
+#3,5La MAplotméthode pour MSnSetles instances
+
+#3.6An interactive shiny app for MA plots
+#???
+
+```{r}
+MAplot(qnt, cex = .8)
+
+plot(qnt, col= as.numeric(qnt))
+
+
+# an : sj on fait intensité moyenne (A) en fonction de log fold change (M), pour nos dif echantillons.
+
+#gpt : 
+# MAplot() génère un MA-plot pour visualiser la relation entre l'intensité moyenne (A) et le log fold change (M) de tes données protéomiques.
+# qnt est un objet de type MSnSet contenant les données quantitatives extraites de ton fichier mzTab (log fold change, intensités, etc.).
+
+
+
+```
+##################################################################"" part ensuite anto
+#3.7 Volcano plots
+
+```{r}
+
+### lignes en + pr utiliser les library
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("msmsEDA")
+
+BiocManager::install("msmsTests")
+###
+
+library("msmsEDA")
+library("msmsTests")
+data(msms.dataset)
+## Pre-process expression matrix
+e <- pp.msms.data(msms.dataset)
+## Models and normalizing condition
+null.f <- "y~batch"
+alt.f <- "y~treat+batch"
+div <- apply(exprs(e), 2, sum)
+## Test
+?gml()
+?apply()
+res <- msms.glm.qlll(e, alt.f, null.f, div = div)
+lst <- test.results(res, e, pData(e)$treat, "U600", "U200 ", div,
+                    alpha = 0.05, minSpC = 2, minLFC = log2(1.8),
+                    method = "BH")
+
+```
+
+# volcano plot
+```{r}
+plot(lst$tres$LogFC, -log10(lst$tres$p.value))
+```
+
+# an zoom en x = FC
+
+```{r}
+plot(lst$tres$LogFC, -log10(lst$tres$p.value),
+     xlim = c(-3, 3))
+grid()
+```
+
+# sj : découper les valeurs de an prot du volcano plot de manière à séparer les ind à fort fold change et p value
+```{r}
+## Plot
+res.volcanoplot(lst$tres,
+                max.pval = 0.05,
+                min.LFC = 1,
+                maxx = 3,
+                maxy = NULL,
+                ylbls = 4)
+```
+
+#3.8 Un tracé PCA
+```{r}
+library("msmsEDA")
+data(msms.dataset)
+msnset <- pp.msms.data(msms.dataset)
+lst <- counts.pca(msnset, wait = FALSE)
+
+# an : traitement par lot et par traitement (an : 2 ech de chaque) -> PCA permet de bien différentier
+# an fonction de leur fc de prot présente ?, dans ce cas + de certaines
+```
+
+
+#PAREIL, une PCA
+```{r}
+pcadata <- lst$pca$x[, 1:2]
+head(pcadata)
+##                  PC1       PC2
+## U2.2502.1 -120.26080 -53.55270
+## U2.2502.2  -99.90618 -53.89979
+## U2.2502.3 -127.35928 -49.29906
+## U2.2502.4 -166.04611 -39.27557
+## U6.2502.1 -127.18423  37.11614
+## U6.2502.2 -117.97016  47.03702
+plot(pcadata[, 1], pcadata[, 2],
+     xlab = "PCA1", ylab = "PCA2")
+grid()
+```
+
+#4 Tracé avec R
+
+```{r}
+kable(plotfuns)
+
+```
+
+
+#4.1Nuages de points
+
+#4.2Historams et diagrammes de densité
+
+```{r}
+# We extract the (normalised) intensities of the first sample
+
+
+x <- exprs(tan2009r1)[, 1]
+
+```
+
+# an hist de la distri de l'intensité
+```{r}
+# and plot the distribution with a histogram and a density plot next to each other on the same figure (using the mfrow par plotting paramter)
+
+par(mfrow = c(1, 2))
+hist(x)
+plot(density(x))
+```
+
+#4.3Box plots and violin plots
+
+```{r}
+# library("beanplot")
+# x <- exprs(tan2009r1)
+# par(mfrow = c(2, 1))
+# boxplot(x)
+# beanplot(x[, 1], x[, 2], x[, 3], x[, 4], log = "")
+```
+
+# 888 proteins box plot + violon plot intensité par ech
+# note : prq X114 ? comme nom
+```{r}
+library("beanplot")
+x <- exprs(tan2009r1)
+par(mfrow = c(2, 1))
+boxplot(x)
+beanplot(x[, 1], x[, 2], x[, 3], x[, 4], log = "")
+```
+
+#4.4Line plots
+
+```{r}
+er <- fData(tan2009r1)$markers == "ER"
+mt <- fData(tan2009r1)$markers == "mitochondrion"
+
+par(mfrow = c(2, 1))
+matplot(t(x[er, ]), type = "b", col = "red", pch = 1, lty = 1)
+matplot(t(x[mt, ]), type = "b", col = "steelblue", pch = 1, lty = 1)
+```
+
+
+#4.4Line plots an qté de prot pr réticulum endoplasmique (ER) et les protéines mitochondriales. An : en lien avec l'intensité, calc aussi du m/z
+```{r}
+er <- fData(tan2009r1)$markers == "ER"
+mt <- fData(tan2009r1)$markers == "mitochondrion"
+
+par(mfrow = c(2, 1))
+matplot(t(x[er, ]), type = "b", col = "red", pch = 1, lty = 1)
+matplot(t(x[mt, ]), type = "b", col = "steelblue", pch = 1, lty = 1)
+
+
+```
+
+# 4.5Bar and dot charts # nb prot par classe
+
+```{r}
+x <- table(fData(tan2009r1)$markers)
+x
+## 
+##  Cytoskeleton            ER         Golgi      Lysosome       Nucleus 
+##             7            28            13             8            21 
+##            PM    Peroxisome    Proteasome  Ribosome 40S  Ribosome 60S 
+##            34             4            15            20            32 
+## mitochondrion       unknown 
+##            29           677
+par(mfrow = c(1, 2))
+barplot(x)
+dotchart(as.numeric(x))
+```
+
+#4.6Heatmaps 
+
+
+```{r}
+
+heatmap(exprs(tan2009r1))
+
+# an : + rouge + exprimé, 
+
+#horizontalement : éloignement des prot (an : tj par nv d'expression)
+
+#verti : et séparation en fonction des 4 ech. Donc compromis ds représentation ?
+
+```
+
+# carte de chaleur 2, pas visiblement de groupement par expression prot et ech
+```{r}
+par(mfrow = c(1, 2))
+x <- matrix(1:9, ncol = 3)
+image(x)
+image(tan2009r1)
+```
+
+#4.7Dendrograms # an pareil que groupement 1ère hit map
+
+```{r}
+d <- dist(t(exprs(tan2009r1))) ## distance between samples
+hc <- hclust(d) ## hierarchical clustering
+plot(hc) ## visualisation
+```
+
+#4.8Venn diagrams
+
+#5Visualising mass spectrometry data
+
+#5.1Direct access to the raw data
+
+
+# an voire spectre d'une ech
+```{r}
+library("mzR")
+mzf <- pxget(px1,
+             "TMT_Erwinia_1uLSike_Top10HCD_isol2_45stepped_60min_01-20141210.mzML")
+## Loading TMT_Erwinia_1uLSike_Top10HCD_isol2_45stepped_60min_01-20141210.mzML from cache.
+ms <- openMSfile(mzf)
+
+hd <- header(ms)
+ms1 <- which(hd$msLevel == 1)
+
+rtsel <- hd$retentionTime[ms1] / 60 > 30 & hd$retentionTime[ms1] / 60 < 35
+lout <- matrix(NA, ncol = 10, nrow = 8)
+lout[1:2, ] <- 1
+for (ii in 3:4)
+    lout[ii, ] <- c(2, 2, 2, 2, 2, 2, 3, 3, 3, 3)
+lout[5, ] <- rep(4:8, each = 2)
+lout[6, ] <- rep(4:8, each = 2)
+lout[7, ] <- rep(9:13, each = 2)
+lout[8, ] <- rep(9:13, each = 2)
+i <- ms1[which(rtsel)][1]
+j <- ms1[which(rtsel)][2]
+ms2 <- (i+1):(j-1)
+layout(lout)
+par(mar=c(4,2,1,1))
+plot(chromatogram(ms)[[1]], type = "l")
+abline(v = hd[i, "retentionTime"], col = "red")
+par(mar = c(3, 2, 1, 0))
+plot(peaks(ms, i), type = "l", xlim = c(400, 1000))
+legend("topright", bty = "n",
+       legend = paste0(
+           "Acquisition ", hd[i, "acquisitionNum"],  "\n",
+           "Retention time ", formatRt(hd[i, "retentionTime"])))
+abline(h = 0)
+abline(v = hd[ms2, "precursorMZ"],
+       col = c("#FF000080",
+           rep("#12121280", 9)))
+par(mar = c(3, 0.5, 1, 1))
+plot(peaks(ms, i), type = "l", xlim = c(521, 522.5), yaxt = "n")
+abline(h = 0)
+abline(v = hd[ms2, "precursorMZ"], col = "#FF000080")
+par(mar = c(2, 2, 0, 1))
+for (ii in ms2) {
+    p <- peaks(ms, ii)
+    plot(p, xlab = "", ylab = "", type = "h", cex.axis = .6)
+    legend("topright",
+           legend = paste0("Prec M/Z\n", round(hd[ii, "precursorMZ"], 2)),
+           bty = "n", cex = .8)
+}
+```
+
+# an : voire en même t m/z rentention time et intensité du pic
+```{r}
+M2 <- MSmap(ms, i:j, 100, 1000, 1, hd)
+plot3D(M2)
+
+```
+
+#5.1.1MS barcoding
+
+```{r}
+
+#gpt : 
+
+#x : temps de retention
+#y : intensité des niveaux de spectre MS
+# couleur : nv d'intensité MS ("black" pour faible et "steelblue" pour élevé), nv MS faible -> intensité du signal pr un ion particulier en m/z, dépend abondance de ces ions
+
+
+par(mar=c(4,1,1,1))
+image(t(matrix(hd$msLevel, 1, nrow(hd))),
+      xlab="Retention time",
+      xaxt="n", yaxt="n", col=c("black","steelblue"))
+k <- round(range(hd$retentionTime) / 60)
+nk <- 5
+axis(side=1, at=seq(0,1,1/nk), labels=seq(k[1],k[2],k[2]/nk))
+```
+
+
+#5.1.2Animation
+#The following animation scrolls over 5 minutes of retention time for a MZ range between 521 and 523.
+```{r}
+library("animation")
+an1 <- function() {
+    for (i in seq(0, 5, 0.2)) {
+        rtsel <- hd$retentionTime[ms1] / 60 > (30 + i) &
+            hd$retentionTime[ms1] / 60 < (35 + i)
+        M <- MSmap(ms, ms1[rtsel], 521, 523, .005, hd)
+        M@map[msMap(M) == 0] <- NA
+        print(plot3D(M, rgl = FALSE))
+    }
+}
+
+saveGIF(an1(), movie.name = "msanim1.gif")
+knitr::include_graphics("./figures/msanim1.gif")
+```
+
+
+# an + gpt : à t de retention constant -> , on voit comment l'intensité du spectre varie si on a un changement de m/z 
+
+```{r}
+# Par exemple, certains ions peuvent avoir des pics très intenses à certains m/z, mais moins à d'autres. Ce phénomène peut être dû à des différences dans la concentration des ions à ces m/z spécifiques, ou à la façon dont les ions sont fragmentés (si tu es dans un spectre MS/MS).
+
+an2 <- function() {
+    for (i in seq(0, 2.5, 0.1)) {
+        rtsel <- hd$retentionTime[ms1] / 60 > 30 & hd$retentionTime[ms1] / 60 < 35
+        mz1 <- 520 + i
+        mz2 <- 522 + i
+        M <- MSmap(ms, ms1[rtsel], mz1, mz2, .005, hd)
+        M@map[msMap(M) == 0] <- NA
+        print(plot3D(M, rgl = FALSE))
+    }
+}
+
+saveGIF(an2(), movie.name = "msanim2.gif")
+knitr::include_graphics("./figures/msanim2.gif")
+```
+
+# 5.2 The MSnbase infrastructure
+
+```{r}
+# an : on prend le spectre : itraqdata2[[25]]
+
+# gpt : pickPeaks(itraqdata, verbose = FALSE) détecte les pics dans les spectres de masse, où les "pics" représentent les ions détectés dans les spectres. Ces pics sont utilisés pour identifier et quantifier les peptides ou protéines. Les résultats de cette opération sont stockés dans l'objet itraqdata2.
+
+library("MSnbase")
+data(itraqdata)
+itraqdata2 <- pickPeaks(itraqdata, verbose = FALSE)
+plot(itraqdata[[25]], full = TRUE, reporters = iTRAQ4)
+
+```
+
+```{r}
+# an comparaison 2 spectre itraqdata2[[25]] et itraqdata2[[28]]
+par(oma = c(0, 0, 0, 0))
+par(mar = c(4, 4, 1, 1))
+plot(itraqdata2[[25]], itraqdata2[[28]], sequences = rep("IMIDLDGTENK", 2))
+
+#gpt : Le code crée un graphique superposé de deux spectres (le 25e et le 28e) pour comparer les profils de m/z et d'intensité des ions.
+# Les séquences de peptides associées à ces spectres sont affichées, ce qui permet de visualiser les fragments d'ions qui correspondent à un peptide donné
+```
+
+#5.3The protViz package
+
+```{r}
+library("protViz")
+
+#gpt :  Ce jeu de données contient probablement des spectres de fragmentation de masse (MSMS)
+data(msms) 
+
+ # gpt  Création des ions fragmentés
+fi <- fragmentIon("TAFDEAIAELDTLNEESYK")
+fi.cyz <- as.data.frame(cbind(c=fi[[1]]$c, y=fi[[1]]$y, z=fi[[1]]$z))
+
+#gpt : 3. Visualisation du spectre avec les ions fragmentés
+p <- peakplot("TAFDEAIAELDTLNEESYK", 
+              spec = msms[[1]],
+              fi = fi.cyz,
+              itol = 0.6,
+              ion.axes = FALSE)
+
+```
+
+#The peakplot function return the annotation of the MSMS spectrum that is plotted:
+```{r}
+str(p)
+```
+
+# 5.4Preprocessing of MALDI-MS spectra
+```{r}
+# an : new data, visualiser le spectre d'une prot (inensité ~ m/z)
+library("MALDIquant")
+
+data("fiedler2009subset", package="MALDIquant")
+
+plot(fiedler2009subset[[14]])
+```
+
+# ligne min d'intensité
+```{r}
+transformedSpectra <- transformIntensity(fiedler2009subset, method = "sqrt")
+smoothedSpectra <- smoothIntensity(transformedSpectra, method = "SavitzkyGolay")
+
+plot(smoothedSpectra[[14]])
+lines(estimateBaseline(smoothedSpectra[[14]]), lwd = 2, col = "red")
+```
+
+
+# on basline notre spectre
+```{r}
+rbSpectra <- removeBaseline(smoothedSpectra)
+plot(rbSpectra[[14]])
+```
+
+# trouver les pics d'intensité
+```{r}
+cbSpectra <- calibrateIntensity(rbSpectra, method = "TIC")
+peaks <- detectPeaks(cbSpectra, SNR = 5)
+
+plot(cbSpectra[[14]])
+points(peaks[[14]], col = "red", pch = 4, lwd = 2)
+```
+
+# marquer les 5 + gros pics d'intensité
+```{r}
+top5 <- intensity(peaks[[14]]) %in% sort(intensity(peaks[[14]]),
+                                         decreasing = TRUE)[1:5]
+labelPeaks(peaks[[14]], index = top5, avoidOverlap = TRUE)
+```
+
+# an gommer les déformation pour que tous les spectres soit correctement aligné
+```{r}
+# Alignement des spectres : Chaque spectre peut avoir des variations dans le temps de rétention ou dans les positions des pics en fonction de la machine utilisée, des conditions expérimentales, etc.
+# 
+# Réajustement selon des pics de référence : Les pics de repère (ciblés pour la calibration) servent de base pour ajuster les autres pics des spectres. Cela permet de s'assurer que tous les spectres sont correctement alignés avant de faire des analyses ou des comparaisons entre eux.
+
+# cause var° result :
+# gpt  Le temps de rétention : Le temps de rétention peut légèrement varier entre les échantillons en raison de différences dans les conditions de la chromatographie, des instruments ou d'autres facteurs expérimentaux.
+# La précision de la mesure de m/z (masse/charge) : Les spectres peuvent avoir des déviations dans les positions des pics en fonction de la calibration de l'instrument, de la résolution du spectromètre ou d'autres conditions.
+
+par(mfrow = c(2, 2))
+warpingFunctions <-
+    determineWarpingFunctions(peaks,
+                              tolerance = 0.001,
+                              plot = TRUE,
+                              plotInteractive = TRUE)
+```
+
+
+# pre code
+```{r}
+par(mfrow = c(1, 1))
+warpedSpectra <- warpMassSpectra(cbSpectra, warpingFunctions)
+warpedPeaks <- warpMassPeaks(peaks, warpingFunctions)
+```
+
+
+# we visualise the need and the effect of the recalibration.
+```{r}
+sel <- c(2, 10, 14, 16)
+xlim <- c(4180, 4240)
+ylim <- c(0, 1.9e-3)
+lty <- c(1, 4, 2, 6)
+
+par(mfrow = c(1, 2))
+plot(cbSpectra[[1]], xlim = xlim, ylim = ylim, type = "n")
+
+for (i in seq(along = sel)) {
+  lines(peaks[[sel[i]]], lty = lty[i], col = i)
+  lines(cbSpectra[[sel[i]]], lty = lty[i], col = i)
+}
+
+plot(cbSpectra[[1]], xlim = xlim, ylim = ylim, type = "n")
+
+for (i in seq(along = sel)) {
+  lines(warpedPeaks[[sel[i]]], lty = lty[i], col = i)
+  lines(warpedSpectra[[sel[i]]], lty = lty[i], col = i)
+}
+```
+
+```{r}
+par(mfrow = c(1, 1))
+```
+
+#6Genomic and protein sequences
+
+#7Mass spectrometry imaging
+
+# ensemble de données d'imagerie MALDI à partir d'un rein de souris
+```{r}
+library("MALDIquant")
+library("MALDIquantForeign")
+
+spectra <- importBrukerFlex("http://files.figshare.com/1106682/MouseKidney_IMS_testdata.zip", verbose = FALSE)
+
+spectra <- smoothIntensity(spectra, "SavitzkyGolay",  halfWindowSize = 8)
+spectra <- removeBaseline(spectra, method = "TopHat", halfWindowSize = 16)
+spectra <- calibrateIntensity(spectra, method = "TIC")
+avgSpectrum <- averageMassSpectra(spectra)
+avgPeaks <- detectPeaks(avgSpectrum, SNR = 5)
+
+avgPeaks <- avgPeaks[intensity(avgPeaks) > 0.0015]
+
+oldPar <- par(no.readonly = TRUE)
+layout(matrix(c(1,1,1,2,3,4), nrow = 2, byrow = TRUE))
+plot(avgSpectrum, main = "mean spectrum",
+     xlim = c(3000, 6000), ylim = c(0, 0.007))
+lines(avgPeaks, col = "red")
+labelPeaks(avgPeaks, cex = 1)
+
+par(mar = c(0.5, 0.5, 1.5, 0.5))
+plotMsiSlice(spectra,
+             center = mass(avgPeaks),
+             tolerance = 1,
+             plotInteractive = TRUE)
+par(oldPar)
+knitr::include_graphics("./figures/mqmsi-1.png")
+```
+
+#7.1An interactive shiny app for Imaging mass spectrometry
+
+
+# representation
+```{r}
+library("shiny")
+runGitHub("sgibb/ims-shiny")
+knitr::include_graphics("./figures/ims-shiny.png")
+```
+
+#8Spatial proteomics
+
+```{r}
+
+#gpt : à gauche : intensité spectrale (gpt quantité relative d'un sp analysé²x) pour les 4 compartiment (rt, golgi, er et pm) pour nos 4 echantillons. 
+
+#an : pca à droite : distances (d'expression ?) entre dif proteines de différents endroit du fois > séparation par compartiement/organtite
+
+### lignes en + pr utiliser les library
+if (!requireNamespace("pRoloc", quietly = TRUE))
+    install.packages("pRoloc")
+
+BiocManager::install("pRoloc")
+
+
+if (!requireNamespace("pRolocdata", quietly = TRUE))
+    install.packages("pRolocdata")
+
+BiocManager::install("pRolocdata")
+
+library("pRoloc")
+library("pRolocdata")
+
+data(tan2009r1)
+
+## these params use class weights
+fn <- dir(system.file("extdata", package = "pRoloc"),
+          full.names = TRUE, pattern = "params2.rda")
+load(fn)
+
+setStockcol(NULL)
+setStockcol(paste0(getStockcol(), 90))
+
+w <- table(fData(tan2009r1)[, "pd.markers"])
+(w <- 1/w[names(w) != "unknown"])
+## 
+##  Cytoskeleton            ER         Golgi      Lysosome       Nucleus 
+##    0.14285714    0.05000000    0.16666667    0.12500000    0.05000000 
+##            PM    Peroxisome    Proteasome  Ribosome 40S  Ribosome 60S 
+##    0.06666667    0.25000000    0.09090909    0.07142857    0.04000000 
+## mitochondrion 
+##    0.07142857
+tan2009r1 <- svmClassification(tan2009r1, params2,
+                               class.weights = w,
+                               fcol = "pd.markers")
+## [1] "pd.markers"
+## Registered S3 method overwritten by 'gdata':
+##   method         from  
+##   reorder.factor gplots
+ptsze <- exp(fData(tan2009r1)$svm.scores) - 1
+lout <- matrix(c(1:4, rep(5, 4)), ncol = 4, nrow = 2)
+layout(lout)
+cls <- getStockcol()
+par(mar = c(4, 4, 1, 1))
+plotDist(tan2009r1[which(fData(tan2009r1)$PLSDA == "mitochondrion"), ],
+         markers = featureNames(tan2009r1)[which(fData(tan2009r1)$markers.orig == "mitochondrion")],
+         mcol = cls[5])
+legend("topright", legend = "mitochondrion", bty = "n")
+plotDist(tan2009r1[which(fData(tan2009r1)$PLSDA == "ER/Golgi"), ],
+         markers = featureNames(tan2009r1)[which(fData(tan2009r1)$markers.orig == "ER")],
+         mcol = cls[2])
+legend("topright", legend = "ER", bty = "n")
+plotDist(tan2009r1[which(fData(tan2009r1)$PLSDA == "ER/Golgi"), ],
+         markers = featureNames(tan2009r1)[which(fData(tan2009r1)$markers.orig == "Golgi")],
+         mcol = cls[3])
+legend("topright", legend = "Golgi", bty = "n")
+plotDist(tan2009r1[which(fData(tan2009r1)$PLSDA == "PM"), ],
+         markers = featureNames(tan2009r1)[which(fData(tan2009r1)$markers.orig == "PM")],
+         mcol = cls[8])
+legend("topright", legend = "PM", bty = "n")
+plot2D(tan2009r1, fcol = "svm", cex = ptsze, method = "kpca") # gpt  analyse par noyau principal (kpca). réduire la dimensionnalité tout en préservant la variance des données.
+addLegend(tan2009r1, where = "bottomleft", fcol = "svm", bty = "n")
+```
+
+```{r}
+refaire tableau
+
+(madata[, c(1, 5)]
+  
+heatmap(madata[, c(1, 5)])
+
+  
+  
+```
+
