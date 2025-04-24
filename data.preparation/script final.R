@@ -3,10 +3,13 @@ library(tidyverse)    # Manipulation des données
 library(ggplot2)      # Visualisation
 library(patchwork)    # Organisation des graphiques en grilles
 library(plotly)       # Utilisation pour l'acm 3d
+library(FactoMineR)
+library(factoextra)
+library(cluster)
 
 # 📥 Chargement des données depuis différents chemins possibles
 data <- read_csv("~/Documents/projet/data/thyroid_data.csv")
-data <- read_csv("~/projet/dossier_cancer/thyroid_data.csv")
+#data <- read_csv("~/projet/dossier_cancer/thyroid_data.csv")
 
 # Résumé général des données (médianes, min, max, etc.)
 summary(data)
@@ -88,6 +91,13 @@ res_mca$eig
 
 # 3) 📐 Récupération des 5 premières dimensions
 mca_coords <- res_mca$ind$coord[, 1:5]
+#3bis) silhouette 
+fviz_nbclust(mca_coords, kmeans,
+             method = "silhouette",
+             k.max = 10,       # nombre max de clusters à tester
+             nstart = 25,
+             verbose = FALSE) +
+  labs(title = "Méthode de la silhouette — Choix optimal du nombre de clusters")
 
 # 4) Clustering k-means sur coordonnées ACM
 set.seed(123)
