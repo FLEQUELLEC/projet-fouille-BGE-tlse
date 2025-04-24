@@ -392,7 +392,7 @@
             <config key="upper_bound">
                 <entry key="datacell" type="xstring" value="org.knime.core.data.def.IntCell"/>
                 <config key="org.knime.core.data.def.IntCell">
-                    <entry key="IntCell" type="xint" value="254"/>
+                    <entry key="IntCell" type="xint" value="249"/>
                 </config>
             </config>
         </config>
@@ -436,13 +436,13 @@
             <config key="lower_bound">
                 <entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
                 <config key="org.knime.core.data.def.DoubleCell">
-                    <entry key="DoubleCell" type="xdouble" value="38.31889763779525"/>
+                    <entry key="DoubleCell" type="xdouble" value="38.562248995983964"/>
                 </config>
             </config>
             <config key="upper_bound">
                 <entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
                 <config key="org.knime.core.data.def.DoubleCell">
-                    <entry key="DoubleCell" type="xdouble" value="47.17582417582418"/>
+                    <entry key="DoubleCell" type="xdouble" value="47.04166666666667"/>
                 </config>
             </config>
         </config>
@@ -461,13 +461,13 @@
             <config key="lower_bound">
                 <entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
                 <config key="org.knime.core.data.def.DoubleCell">
-                    <entry key="DoubleCell" type="xdouble" value="12.756021486164423"/>
+                    <entry key="DoubleCell" type="xdouble" value="13.225599129755022"/>
                 </config>
             </config>
             <config key="upper_bound">
                 <entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
                 <config key="org.knime.core.data.def.DoubleCell">
-                    <entry key="DoubleCell" type="xdouble" value="18.438241303571832"/>
+                    <entry key="DoubleCell" type="xdouble" value="17.902023800128042"/>
                 </config>
             </config>
         </config>

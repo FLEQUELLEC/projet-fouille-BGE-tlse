@@ -1,5 +1,5 @@
 "Column","Min","Max","Mean","Std. deviation","Variance","Skewness","Kurtosis","Overall sum","No. missings","No. NaNs","No. +∞s","No. -∞s","Median","Row count","Histogram"
-"Error in %",0,10.256410256410257,5.472334682861,2.848155322162744,8.111988739163964,-0.2944757548819712,0.8170251108705221,54.72334682861,0,0,0,0,,10,"
+"Error in %",0,10.256410256410257,3.3940620782726043,3.879099842847312,15.047415590778042,0.8274949176141561,-0.89803462271325,33.94062078272604,0,0,0,0,,10,"
 <svg stroke-dasharray=""none"" shape-rendering=""auto""
      xmlns=""http://www.w3.org/2000/svg"" font-family=""&apos;Dialog&apos;""
      width=""200"" text-rendering=""auto"" fill-opacity=""1""
@@ -18,10 +18,10 @@
             <rect x=""171"" width=""29"" height=""9"" y=""76"" stroke=""none""/>
             <rect x=""142"" width=""29"" height=""17"" y=""68"" stroke=""none""/>
             <line y2=""85"" x1=""114"" x2=""143"" stroke=""none"" y1=""85""/>
-            <rect x=""85"" width=""29"" height=""43"" y=""42"" stroke=""none""/>
+            <line y2=""85"" x1=""85"" x2=""114"" stroke=""none"" y1=""85""/>
             <line y2=""85"" x1=""57"" x2=""86"" stroke=""none"" y1=""85""/>
-            <rect x=""28"" width=""29"" height=""9"" y=""76"" stroke=""none""/>
-            <rect x=""0"" width=""29"" height=""9"" y=""76"" stroke=""none""/>
+            <rect x=""28"" width=""29"" height=""26"" y=""59"" stroke=""none""/>
+            <rect x=""0"" width=""29"" height=""34"" y=""51"" stroke=""none""/>
             <line y2=""85"" fill=""none"" x1=""0"" x2=""200"" stroke=""rgb(64,64,64)""
                   y1=""85""/>
             <line fill=""none"" x1=""171"" x2=""171"" y1=""76"" y2=""85""
@@ -42,11 +42,11 @@
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
             <line fill=""none"" x1=""142"" x2=""142"" y1=""85"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""85"" x2=""85"" y1=""42"" y2=""85""
+            <line fill=""none"" x1=""85"" x2=""85"" y1=""85"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""85"" x2=""114"" y1=""42"" y2=""42""
+            <line fill=""none"" x1=""85"" x2=""114"" y1=""85"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""114"" x2=""114"" y1=""42"" y2=""85""
+            <line fill=""none"" x1=""114"" x2=""114"" y1=""85"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
             <line fill=""none"" x1=""57"" x2=""57"" y1=""85"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
@@ -54,17 +54,17 @@
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
             <line fill=""none"" x1=""85"" x2=""85"" y1=""85"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""28"" x2=""28"" y1=""76"" y2=""85""
+            <line fill=""none"" x1=""28"" x2=""28"" y1=""59"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""28"" x2=""57"" y1=""76"" y2=""76""
+            <line fill=""none"" x1=""28"" x2=""57"" y1=""59"" y2=""59""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""57"" x2=""57"" y1=""76"" y2=""85""
+            <line fill=""none"" x1=""57"" x2=""57"" y1=""59"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""0"" x2=""0"" y1=""76"" y2=""85""
+            <line fill=""none"" x1=""0"" x2=""0"" y1=""51"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""0"" x2=""28"" y1=""76"" y2=""76""
+            <line fill=""none"" x1=""0"" x2=""28"" y1=""51"" y2=""51""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""28"" x2=""28"" y1=""76"" y2=""85""
+            <line fill=""none"" x1=""28"" x2=""28"" y1=""51"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
             <line fill=""none"" x1=""0"" x2=""0"" y1=""85"" y2=""90"" stroke=""black""
                   stroke-width=""1.5""/>
@@ -174,7 +174,7 @@
         </g>
     </g>
 </svg>"
-"Error Count",0,4,2.1,1.1005049346146119,1.2111111111111112,-0.23758902089777634,0.9068500727451969,21,0,0,0,0,,10,"
+"Error Count",0,4,1.3,1.4944341180973262,2.233333333333333,0.8589084483606823,-0.7819113388282465,13,0,0,0,0,,10,"
 <svg stroke-dasharray=""none"" shape-rendering=""auto""
      xmlns=""http://www.w3.org/2000/svg"" font-family=""&apos;Dialog&apos;""
      width=""200"" text-rendering=""auto"" fill-opacity=""1""
@@ -194,12 +194,12 @@
             <line y2=""85"" x1=""160"" x2=""180"" stroke=""none"" y1=""85""/>
             <rect x=""140"" width=""20"" height=""17"" y=""68"" stroke=""none""/>
             <line y2=""85"" x1=""120"" x2=""140"" stroke=""none"" y1=""85""/>
-            <rect x=""100"" width=""20"" height=""43"" y=""42"" stroke=""none""/>
+            <line y2=""85"" x1=""100"" x2=""120"" stroke=""none"" y1=""85""/>
             <line y2=""85"" x1=""80"" x2=""100"" stroke=""none"" y1=""85""/>
             <line y2=""85"" x1=""60"" x2=""80"" stroke=""none"" y1=""85""/>
-            <rect x=""40"" width=""20"" height=""9"" y=""76"" stroke=""none""/>
+            <rect x=""40"" width=""20"" height=""26"" y=""59"" stroke=""none""/>
             <line y2=""85"" x1=""20"" x2=""40"" stroke=""none"" y1=""85""/>
-            <rect x=""0"" width=""20"" height=""9"" y=""76"" stroke=""none""/>
+            <rect x=""0"" width=""20"" height=""34"" y=""51"" stroke=""none""/>
             <line y2=""85"" fill=""none"" x1=""0"" x2=""200"" stroke=""rgb(64,64,64)""
                   y1=""85""/>
             <line fill=""none"" x1=""180"" x2=""180"" y1=""76"" y2=""85""
@@ -226,11 +226,11 @@
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
             <line fill=""none"" x1=""140"" x2=""140"" y1=""85"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""100"" x2=""100"" y1=""42"" y2=""85""
+            <line fill=""none"" x1=""100"" x2=""100"" y1=""85"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""100"" x2=""120"" y1=""42"" y2=""42""
+            <line fill=""none"" x1=""100"" x2=""120"" y1=""85"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""120"" x2=""120"" y1=""42"" y2=""85""
+            <line fill=""none"" x1=""120"" x2=""120"" y1=""85"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
             <line fill=""none"" x1=""80"" x2=""80"" y1=""85"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
@@ -244,11 +244,11 @@
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
             <line fill=""none"" x1=""80"" x2=""80"" y1=""85"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""40"" x2=""40"" y1=""76"" y2=""85""
+            <line fill=""none"" x1=""40"" x2=""40"" y1=""59"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""40"" x2=""60"" y1=""76"" y2=""76""
+            <line fill=""none"" x1=""40"" x2=""60"" y1=""59"" y2=""59""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""60"" x2=""60"" y1=""76"" y2=""85""
+            <line fill=""none"" x1=""60"" x2=""60"" y1=""59"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
             <line fill=""none"" x1=""20"" x2=""20"" y1=""85"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
@@ -256,11 +256,11 @@
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
             <line fill=""none"" x1=""40"" x2=""40"" y1=""85"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""0"" x2=""0"" y1=""76"" y2=""85""
+            <line fill=""none"" x1=""0"" x2=""0"" y1=""51"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""0"" x2=""20"" y1=""76"" y2=""76""
+            <line fill=""none"" x1=""0"" x2=""20"" y1=""51"" y2=""51""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
-            <line fill=""none"" x1=""20"" x2=""20"" y1=""76"" y2=""85""
+            <line fill=""none"" x1=""20"" x2=""20"" y1=""51"" y2=""85""
                   stroke=""rgb(64,64,64)"" stroke-width=""1.5""/>
             <line fill=""none"" x1=""0"" x2=""0"" y1=""85"" y2=""90"" stroke=""black""
                   stroke-width=""1.5""/>

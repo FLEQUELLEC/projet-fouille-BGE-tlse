@@ -33,7 +33,7 @@
                     <entry key="EnabledStatus" type="xboolean" value="true"/>
                 </config>
                 <entry key="create_missing_folders" type="xboolean" value="false"/>
-                <entry key="if_path_exists" type="xstring" value="append"/>
+                <entry key="if_path_exists" type="xstring" value="overwrite"/>
             </config>
             <entry key="column_delimiter" type="xstring" value=","/>
             <entry key="row_delimiter" type="xstring" isnull="true" value=""/>
@@ -88,6 +88,6 @@
     <config key="ports"/>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-        <entry key="file_store_id" type="xstring" value="c720b96f-aefb-451f-a29d-ef95bd441efc"/>
+        <entry key="file_store_id" type="xstring" value="ac9aa536-a88e-457d-a766-00af08a8bd76"/>
     </config>
 </config>

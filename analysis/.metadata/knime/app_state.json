@@ -1,22 +1,4 @@
 {
   "version" : "5.4.3.v202503031608",
-  "projects" : [ {
-    "name" : "Fouille",
-    "active" : true,
-    "origin" : {
-      "providerId" : "local",
-      "spaceId" : "local",
-      "relativePath" : "Fouille"
-    }
-  } ],
-  "mostRecentlyUsedProjects" : [ {
-    "name" : "Fouille",
-    "timeUsed" : "2025-04-12T11:04:46.161655735+02:00",
-    "origin" : {
-      "providerId" : "local",
-      "spaceId" : "local",
-      "projectType" : "WORKFLOW",
-      "relativePath" : "Fouille"
-    }
-  } ]
+  "projects" : [ ]
 }
