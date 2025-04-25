@@ -1,104 +1,94 @@
 # 📊 Fouille Project – Analyse de la récidive du cancer de la thyroïde
 
 ## 📌 Description
-**Fouille Project** est un projet de fouille de données développé dans le cadre du module **Fouille de Données** du Master BGE à l’Université Paul Sabatier - Toulouse III. Il vise à explorer des données médicales afin d’identifier des patterns associés à la récidive du cancer de la thyroïde après traitement.
+**Fouille Project** est un projet de fouille de données mené dans le cadre du module **Fouille de Données** du Master BGE à l’Université de Toulouse (anciennement Paul Sabatier). Il vise à explorer un jeu de données médicales afin d’identifier les facteurs de risque associés à la récidive du cancer de la thyroïde après traitement.
 
 ---
 
 ## 🌟 Objectifs de l’analyse
 
-L’objectif principal de ce projet est d’exploiter des méthodes de **fouille de données supervisées et non-supervisées** afin d’explorer les facteurs associés à la **récidive du cancer de la thyroïde** après traitement.
+L’objectif principal est de mobiliser des méthodes de **fouille de données supervisées et non-supervisées** pour mieux comprendre les mécanismes de récidive du **cancer de la thyroïde** après administration d’iode radioactif (RAI).
 
-Plus précisément, le projet vise à :
+Le projet vise notamment à :
 
-- 🧬 **Analyser les profils cliniques et pathologiques** des patients afin d’identifier les caractéristiques individuelles majeures
-- ⚠️ **Détecter des facteurs de risque potentiels** liés à la récidive (âge, stade tumoral, réponse au traitement, etc.)
-- 🧠 **Appliquer des algorithmes de classification** (arbre, forêt, bayésien) pour tenter de **prédire l’occurrence de récidive**
-- 🧩 **Regrouper les patients par similarité** grâce à des techniques de **clustering non-supervisé** (ACM + k-means)
+- 🧬 **Analyser les profils cliniques et pathologiques** des patients
+- ⚠️ **Identifier les facteurs de risque potentiels** (âge, type de tumeur, réponse au traitement, etc.)
+- 🧠 **Tester des algorithmes de classification** (arbre de décision, forêt aléatoire, bayésien)
+- 🧩 **Regrouper les patients par similarité** via le **clustering non supervisé** (ACM + k-means)
 
-> Cette analyse se veut **exploratoire**, et les objectifs pourront être ajustés ou affinés au fur et à mesure de l’avancement du projet.
-
+> 
 
 ---
 
 ## ⚙️ Fonctionnalités
-- Exploration et traitement de données médicales
-- Préparation de la matrice individus-variables
-- Application d’algorithmes de classification (arbres de décision, forêts aléatoires, etc.)
-- Clustering non supervisé (k-means,…)
-- Visualisations des résultats (ACP, heatmaps, arbres…)
+- Analyse statistique descriptive et visualisation des variables
+- Préparation d’une matrice individus-variables
+- Application de modèles de classification supervisée
+- Clustering non supervisé basé sur l’ACM
+- Visualisations dynamiques 2D et 3D des groupes détectés
 
 ---
 
 ## 📅 Calendrier du projet
 
-### ✅ Rendu 1 — 21 mars : Création du groupe et dépôt GitLab
+### ✅ Rendu 1 — 21 mars
 - Création du dépôt GitLab
-- Ajout de `@rbarriot` en tant que membre
-- Envoi d’un mail avec :
-  - Lien GitLab
-  - Lien du jeu de données
-  - Description des données (type, nb individus/variables)
+- Partage du lien avec l’enseignant
+- Description préliminaire des données
 
-### 🔍 Rendu 2 — 4 avril : Données et objectifs
-- Mise à jour du README :
-  - Description du dataset
-  - Objectifs d’analyse
-  - Variables et transformations envisagées
-  - Classe prédite (si classification)
+### 🔍 Rendu 2 — 4 avril
+- Définition des objectifs
+- Sélection et préparation du jeu de données
+- Prévision des méthodes d’analyse
 
-### 🧪 Rendu 3 — 18 avril : Matrice individus-variables
-- Génération de la matrice
-- Stockage dans `/data`
-- Scripts dans `/data_preparation`
-- Documentation du processus
+### 🧪 Rendu 3 — 18 avril
+- Préparation des jeux de données transformés
+- Construction de la matrice individus-variables
+- Début des visualisations et traitements exploratoires
 
-### 📊 Rendu 4 — 25 avril : Résultats et analyse finale
-- Rapport complet dans `/rapport`
-- Résultats dans `/analysis`
-- Mise à jour du README
-- Dépôt du rapport sur Moodle + envoi à RB
+### 📊 Rendu 4 — 25 avril
+- Finalisation des analyses (classification et clustering)
+- Rédaction et dépôt du rapport final
+- Nettoyage du dépôt GitLab et dépôt sur Moodle
 
 ---
 
 ## 📜 Jeu de données
 
-Données issues de :  
+Jeu de données provenant de :  
 > *Thyroid Cancer Recurrence Dataset (modifié)*  
-> Auteur de la version originale : Joe Beach Capital – [Kaggle](https://www.kaggle.com/datasets/joebeachcapital/differentiated-thyroid-cancer-recurrence)  
-> Version modifiée par : Aneesha Anto – [Kaggle](https://www.kaggle.com/datasets/aneevinay/thyroid-cancer-recurrence-dataset?resource=download)
-
-Ce jeu de données a été filtré et nettoyé pour se concentrer sur l’analyse de la récidive post-traitement.
+> Auteur original : Joe Beach Capital – [Kaggle](https://www.kaggle.com/datasets/joebeachcapital/differentiated-thyroid-cancer-recurrence)  
+> Version nettoyée et filtrée par : Aneesha Anto – [Kaggle](https://www.kaggle.com/datasets/aneevinay/thyroid-cancer-recurrence-dataset?resource=download)
 
 ### 📂 Contexte
-Le dataset se concentre sur la récidive du **cancer de la thyroïde** après un traitement par **iode radioactif (RAI)**. Il contient des données cliniques, pathologiques, et des informations de suivi pour 383 patients.
+Ce dataset rassemble les données cliniques de **383 patients** atteints d’un cancer de la thyroïde, ayant reçu un traitement à l’iode radioactif. Il permet d’étudier les facteurs liés à la **récidive**.
 
 ### 📊 Vue d’ensemble
-- **Nombre d'observations** : 383
-- **Nombre de variables** : 13
-- **Données manquantes** : Aucune
-- **Type** : données tabulaires, mixtes (catégorielles + numériques)
+- **Observations** : 383
+- **Variables** : 13
+- **Données manquantes** : aucune
+- **Types** : catégorielles et une quantitative (`Age`)
 
-### 🧬 Variables disponibles
+### 🧬 Variables principales
 
-| Nom de la variable     | Description |
-|------------------------|-------------|
-| `Age`                  | Âge du patient |
-| `Gender`               | Sexe (Male/Female) |
-| `Hx Radiotherapy`      | Antécédents de radiothérapie |
-| `Adenopathy`           | Atteinte ganglionnaire |
-| `Pathology`            | Type de cancer thyroïdien |
-| `Focality`             | Focalité tumorale (Uni/Multi) |
-| `Risk`                 | Niveau de risque |
-| `T`, `N`, `M`          | Classifications TNM |
-| `Stage`                | Stade du cancer |
-| `Response`             | Réponse au traitement |
-| `Recurred`             | Récidive (Yes/No) |
+| Variable               | Description                           |
+|------------------------|----------------------------------------|
+| `Age`                  | Âge du patient                        |
+| `Gender`               | Sexe (Male/Female)                    |
+| `Hx Radiotherapy`      | Antécédents de radiothérapie          |
+| `Adenopathy`           | Présence de ganglions atteints        |
+| `Pathology`            | Type histologique du cancer           |
+| `Focality`             | Focalité tumorale (uni/multi)         |
+| `Risk`                 | Niveau de risque                      |
+| `T`, `N`, `M`          | Classifications TNM                   |
+| `Stage`                | Stade du cancer                       |
+| `Response`             | Réponse au traitement                 |
+| `Recurred`             | Récidive observée (Yes/No)            |
 
 ### 🔍 Utilisation prévue
-- **Classification** : prédire la récidive (`Recurred`)
-- **Clustering** : regrouper les profils de patients
-- **Statistiques exploratoires** : comprendre les corrélations cliniques
+- Prédiction de la récidive (`Recurred`) par classification
+- Exploration des profils patients via clustering
+- Analyse statistique des variables cliniques et TNM
 
 ---
 
@@ -112,28 +102,52 @@ cd projet
 
 ---
 
-## 📈 Visuals
-📌 *Captures d'écran, visualisations, ou graphiques à insérer ici ultérieurement*
-
----
-
 ## 🤝 Auteurs & Remerciements
 
 Projet mené par :
 - **Florent LE QUELLEC**
 - **Antonin MENARD**
 
-Encadré par **Roland BARRIOT** – merci pour ses conseils et son accompagnement.
+Encadrement : **Roland BARRIOT** – Merci pour son suivi et ses retours tout au long du projet.
 
 ---
 
 ## 📜 Licence
 
-Ce projet est sous licence **Apache 2.0** — voir le fichier [LICENSE](LICENSE) pour plus d’informations.
+Ce projet est sous licence **Apache 2.0** – voir le fichier [LICENSE](LICENSE).
 
 ---
 
-## 🚧 Statut du projet
+## ✅ Statut du projet
 
-💠 En développement actif
+✔️ **Projet terminé**  
+Toutes les étapes prévues ont été réalisées et les livrables ont été remis conformément au cahier des charges pédagogique.
+
+---
+
+## 🏁 Résultats clés
+
+- 🔍 Le taux global de récidive observé est de 28 %, les facteurs les plus corrélés à la récidive étant : adénopathie, type de réponse au traitement, et niveau de risque.
+- 🌳 Les meilleurs modèles de classification (arbre de décision, forêt aléatoire) ont obtenu des taux d’erreur inférieurs à 5 %.
+- 🔗 Le clustering a permis d’identifier des profils patients distincts et cohérents avec les classes cliniques.
+- 📊 Une interface interactive 3D permet de visualiser les clusters issus de l’ACM et du k-means.
+
+---
+
+## 🧪 Matériel utilisé
+
+L’analyse des données a été réalisée à l’aide de :
+
+- **R (v4.4.2)** et **RStudio** pour l’analyse exploratoire, les visualisations, l’analyse multivariée (ACM) et le clustering
+  - Packages principaux : `tidyverse`, `ggplot2`, `patchwork`, `FactoMineR`, `factoextra`, `plotly`, `cluster`
+- **KNIME (v5.4.3)** pour la classification automatique avec validation croisée (arbres, forêts, naïf bayésien)
+
+---
+
+## 🗂️ Structure du dépôt
+
+- `/data` : données sources et matrice individus-variables
+- `/data_preparation` : scripts de transformation et nettoyage
+- `/analysis` : scripts R et workflows KNIME pour les analyses
+- `/rapport` : rapport final au format PDF
 
