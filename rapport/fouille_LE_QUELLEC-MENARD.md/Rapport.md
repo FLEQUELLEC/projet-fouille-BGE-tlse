@@ -326,15 +326,23 @@ En conclusion, ce projet démontre l’apport concret de la fouille de données 
 
 ## Annexe 4 : Caractéristiques des clusters
 
-![Clusters](./awmyzhw4.png)
+## Annexe 4 : Caractéristiques complètes des Clusters
+
+| Cluster | Gender | Hx Radiotherapy | Adenopathy | Pathology       | Focality     | Risk         | T    | N    | M   | Stage | Response              | Recurred |
+|---------|--------|-----------------|------------|-----------------|--------------|--------------|------|------|-----|-------|-----------------------|----------|
+| 1       | F      | No              | Right      | Papillary       | Multi-Focal  | Intermediate | T3a  | N1b  | M0  | I     | Structural Incomplete  | Yes      |
+| 2       | F      | No              | No         | Papillary       | Uni-Focal    | Low          | T2   | N0   | M0  | I     | Excellent              | No       |
+| 3       | M      | No              | Bilateral  | Papillary       | Multi-Focal  | High          | T4a  | N1b  | M1  | IVB   | Structural Incomplete  | Yes      |
+| 4       | F      | No              | No         | Micropapillary  | Uni-Focal    | Low          | T1a  | N0   | M0  | I     | Excellent              | No       |
 
 ## Annexe 5 : Diagrammes en barre des variables
 
-![Diagrammes en barre](./rhwlxy3s.png)
+![Diagrammes en barre](./awmyzhw4.png)
+
 
 ## Annexe 6 : Graphique silhouette
 
-![Graphique silhouette](./awmyzhw4.png)
+![Graphique silhouette](/rhwlxy3s.png)
 
 ---
 
