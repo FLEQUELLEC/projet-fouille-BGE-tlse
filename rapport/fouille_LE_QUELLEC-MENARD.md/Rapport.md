@@ -342,7 +342,7 @@ En conclusion, ce projet démontre l’apport concret de la fouille de données 
 
 ## Annexe 6 : Graphique silhouette
 
-![Graphique silhouette](/rhwlxy3s.png)
+![Graphique silhouette](./rhwlxy3s.png)
 
 ---
 
