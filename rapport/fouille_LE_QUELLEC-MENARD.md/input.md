@@ -131,9 +131,21 @@ On constate une augmentation du risque de récidive avec l’évolution du cance
 
 ![Figure 2](./hsl0tafe.png)
 
+Les âges du groupe ayant connu une récidive et ceux ayant connu une récidive ne suivant pas une loi normale et n’étant pas homoscédastique (même après une transformation log et carré), nous avons donc réalisé test non paramétrique de Wilcoxon-Mann-Whitney unilatéral pour comparer les moyennes des âges de ces deux groupes. 
+Ce dernier nous a indiqué que les individus ayant connu une récidive sont en moyenne plus âgés que ceux n’en ayant pas connu (p-value = 1.777e-05, voire la figure 2). Ces résultats pouvaient être attendus dans la mesure où des individus plus âgés pourraient avoir des organismes plus fragiles qui auraient plus de difficultés à lutter contre un cancer.
+
+
 ![Figure 3](./cm3ncptz.png)
 
+Le taux de récidive sur l’ensemble des patients est de 28%. 72% des patients n’ont donc pas de récidive, comme visible sur la figure 3.
+
+
 ![Tableau 1](./2y0p0uan.png)
+
+Ce tableau présente les résultats du test du Chi² d’indépendance appliqué à chaque variable catégorielle du jeu de données en relation avec la variable cible Recurred (récidive). Pour chaque variable, sont indiquées la statistique de test (statistic) et la valeur p associée (p_value), permettant d’évaluer l’existence d’une dépendance significative entre la variable en question et la survenue d’une récidive.
+
+Ces résultats confirment statistiquement les observations issues de l’analyse exploratoire : certaines variables comme la réponse au traitement, la classification du risque, ou le statut ganglionnaire (N) sont fortement liées à la récidive du cancer de la thyroïde. Ces variables constituent ainsi des candidats solides pour la construction de modèles de classification ou la définition de sous-groupes à risque.
+
 
 ---
 
