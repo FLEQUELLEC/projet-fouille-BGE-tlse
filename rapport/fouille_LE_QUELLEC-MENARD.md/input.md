@@ -92,48 +92,42 @@ En outre, la majorité de nos individus sont atteints d’un cancer de type papi
 La figure 1 est une représentation de la distribution des différentes modalités pour chacune de nos variables catégorielles en fonction d’une récidive ou non du cancer (Recurred). Ce sont des barres empilées exprimées en pourcentage, afin d’observer la proportion relative de récidive pour chaque modalité.
 
 ### Adenopathy
+Les patients avec récidive sont présents chez 100% des patients des groupes “Extensive”, “Posterior” et sont très représentés dans les groupes “Left”, “Bilateral” et “Right, tandis que l'absence d'adénopathie (“No”) est majoritairement associée à l'absence de récidive.
 
-*(Texte)*
+Cela suggère un lien fort entre le fait d’avoir une adénopathie et le risque de récidive, certaines adénopathies semblant être associées à des risques plus élevés de récidive.
 
 ### Focality
-
-*(Texte)*
+Les cas de tumeurs multi-focaux présentent une proportion nettement plus élevée de récidive que les cas uni-focaux. Cela renforce l’idée qu’un cancer multifocal est plus agressif et par conséquent, plus difficile à éradiquer complètement.
 
 ### Gender
-
-*(Texte)*
+Les hommes semblent avoir une fréquence de récidive plus élevée que les femmes. Ceci pourrait indiquer qu’il existe un facteur de risque lié au sexe.
 
 ### Hx Radiotherapy
-
-*(Texte)*
+Les patients ayant déjà subi une radiothérapie ont plus de récidives que ceux qui n’en ont pas eu. Cela pourrait refléter un cancer plus avancé au départ ou bien une résistance accrue. Il est cependant important de prendre en compte qu'une forte majorité des patients n’ont pas eu de radiothérapie.
 
 ### Métastase (M)
-
-*(Texte)*
+La présence d’une métastase est associée fortement à la récidive. Ce résultat est en cohérence avec le fait que ce cancer soit à un niveau de développement plus avancé.
 
 ### Ganglion touché (N)
+Le pourcentage de récidive est faible pour les patients N0, moyen pour les patients N1a et élevé pour les patients N1b.  Pour rappel, le taux de récidive sur l’ensemble des patients est de 28%, posséder un cancer N1b est donc un facteur plus fréquemment associé à la récidive.
 
-*(Texte)*
+Ce résultat met en évidence l’importance du statut ganglionnaire dans le risque de rechute.
 
 ### Taille (T)
-
-*(Texte)*
-
+On observe une augmentation progressive du risque de récidive avec le développement du cancer. Les tailles tumorales les plus petites (T1 et T2) sont associées à peu de récidives, contrairement aux tumeurs de grande taille (T3-T4) qui montrent des fréquences élevées de récidive (T3a possède un risque de récidive intermédiaire).
 ### Pathology
-
-*(Texte)*
+Les cancers papillaires, folliculaires et les cancers à cellules de Hürthle sont davantage associés à la récidive (aux alentour de 35% des cas pour les trois cancers). Aucune récidive de cancer n’a été observée chez les patients atteints d’un cancer micro-papillaire.
 
 ### Response
-
-*(Texte)*
+Une réponse structurale incomplète au traitement est fortement associée à la récidive. Une réponse biochimique incomplète est associée à la récidive dans près de la moitié des cas. Pour rappel, le taux de récidive sur l’ensemble des patients est de 28%, une réponse biochimique incomplète est donc un facteur plus fréquemment associé à la récidive. Une réponse excellente aux traitements est associée à un taux de récidive très faible, conformément aux attentes cliniques.
 
 ### Risk
-
-*(Texte)*
+Tous les patients à haut risque ont récidivé, tandis que ceux à faible risque récidivent rarement (4.8%). Les patients ayant un risque intermédiaire sont associés à un risque de récidive situé entre ces deux valeurs, mais l’association demeure assez forte. Ces résultats montrent l’existence d’une association positive entre le risque de propagation et le risque de récidive, en conformité avec ce que l’on pourrait attendre d’un cancer plus agressif.
 
 ### Stage
 
-*(Texte)*
+On constate une augmentation du risque de récidive avec l’évolution du cancer au fil des stades, en cohérence avec nos résultats sur les classifications TNM. Le stade I est le seul associé à un risque de récidive assez faible (19.5%), le stade II est associé majoritairement à des patients ayant connu une rechute, et les stades III, IVB, IVA sont associés à de la récidive dans 100% des cas.
+
 
 ![Figure 2](./hsl0tafe.png)
 
