@@ -140,7 +140,7 @@ Ce dernier nous a indiqué que les individus ayant connu une récidive sont en m
 Le taux de récidive sur l’ensemble des patients est de 28%. 72% des patients n’ont donc pas de récidive, comme visible sur la figure 3.
 
 
-![Tableau 1](./2y0p0uan.png)
+![Tableau 1](./ya14e0pw.png)
 
 Ce tableau présente les résultats du test du Chi² d’indépendance appliqué à chaque variable catégorielle du jeu de données en relation avec la variable cible Recurred (récidive). Pour chaque variable, sont indiquées la statistique de test (statistic) et la valeur p associée (p_value), permettant d’évaluer l’existence d’une dépendance significative entre la variable en question et la survenue d’une récidive.
 
@@ -151,27 +151,110 @@ Ces résultats confirment statistiquement les observations issues de l’analyse
 
 ## Clustering
 
-![Figure 4](./ya14e0pw.png)
+![Figure 4](./2y0p0uan.png)
 
-Description des 4 clusters.
+La figure 4 présente la visualisation en deux dimensions des clusters obtenus via k-means appliqué aux coordonnées issues de l’Analyse des Correspondances multiples (ACM). Chaque point représente un individu (patient), positionné selon les deux premiers axes de l’ACM, qui expliquent ensemble 26,8% de la variance totale, ce qui peut expliquer le chevauchement des clusters. Une version en 3D permettant de prendre en compte tous les axes est disponible sur le gitlab Les patients sont colorés selon leur cluster d’appartenance, les zones convexes délimitant les regroupements. Le nombre de clusters a été déterminé à la suite d’un test de silhouette qui indiquait un nombre de clusters optimal entre 4 et 8. Dans un souci de simplicité d’interprétation, nous avons choisi de ne garder que 4 clusters (voire l’annexe 6).
+
+Analyse des clusters  (annexe 4)  : 
+
+- Cluster 1 (bleu - points) : Ce cluster illustre un profil ambigu : malgré un stade I et une absence de métastases, la combinaison d’un ganglion atteint (N1b), d’une tumeur multifocale et d’une réponse incomplète au traitement est associée à une probabilité accrue de récidive. Ce groupe représente des patients à risque clinique non négligeable, même dans des stades précoces.
+
+- Cluster 2 (jaune - triangles) : Ce groupe représente des patients à faible risque, typiques d’une prise en charge efficace du cancer thyroïdien. Ils ont des caractéristiques favorables à tous les niveaux (absence d’adénopathie, réponse complète, stade I), et ne montrent aucune récidive. Ce cluster peut être considéré comme un groupe de référence ou un profil de guérison attendue.
+
+- Cluster 3 (gris - carrés) : Ce cluster regroupe un profil alarmant, avec des caractéristiques cliniques sévères à tous les niveaux : grosse tumeur, adénopathies multiples, métastases, mauvaise réponse au traitement. Tous les patients de ce groupe présentent une récidive, ce qui en fait un profil critique dans la prise en charge thérapeutique.
+
+- Cluster 4 (rouge - croix) : Ce cluster concentre les caractéristiques les plus favorables observables dans l’ensemble du jeu de données. Le type histologique (Micropapillary) est reconnu pour son faible potentiel de récidive, et toutes les autres variables vont dans le même sens. Il s’agit du profil idéal, typique des formes très localisées et traitées efficacement.
+
+Ces clusters mettent en évidence la capacité du clustering à restituer des profils patients cohérents cliniquement, permettant d’envisager une stratification des risques fondée sur des combinaisons de variables, et non sur un facteur isolé. Cette approche peut constituer un outil d’aide à la décision complémentaire aux classifications traditionnelles.
+
 
 ---
 
 ## Classification
 
-Description des 4 modèles testés.
+L’objectif de cette étape est d’évaluer la capacité de différents modèles de classification supervisée à prédire la variable cible **Recurred** (récidive du cancer de la thyroïde), à partir de données cliniques et pathologiques.  
+Quatre modèles ont été testés et comparés sur la base des performances observées lors de validations croisées :
+
+- Arbre de décision
+- Forêt aléatoire
+- Régression logistique
+- Classifieur naïf bayésien
+
+### Tableau 2 : Efficacité des différents modèles de classification
+
+| Modèle                        | Taux d'Erreur (%) | Nombre moyen d'Erreur | Nombre moyen de patients testés |
+|--------------------------------|-------------------|------------------------|----------------------------------|
+| Arbre de décision              | 3,394             | 1,3                    | 38,3                            |
+| Forêt aléatoire (500 arbres)   | 3,914             | 1,5                    | 38,3                            |
+| Régression linéaire (âge non inclus) | 4,69        | 1,8                    | 38,3                            |
+| Naïf bayésien                  | 7,834             | 3                      | 38,3                            |
+
+---
+
+L’arbre de décision s’impose comme le meilleur compromis entre performance et interprétabilité. Son taux d’erreur très faible (3,4 %) en fait un outil potentiellement exploitable dans un cadre clinique.
+
+La forêt aléatoire, plus complexe mais robuste, obtient des performances similaires, avec une meilleure capacité de généralisation sur des données plus bruitées.
+
+La régression logistique, bien que légèrement moins performante, permet d’identifier les contributions individuelles des variables à la prédiction, ce qui peut être utile dans un objectif explicatif.
+
+Le classifieur naïf bayésien, basé sur l’indépendance des variables, est nettement moins performant ici, ce qui confirme que les relations entre variables sont interdépendantes et que ce modèle n’est pas le plus adapté à ce jeu de données.
+
+La comparaison des modèles montre que les méthodes d’arbres sont particulièrement efficaces dans ce contexte. Leur capacité à modéliser des interactions complexes entre variables catégorielles, tout en maintenant une bonne lisibilité du modèle, les rend particulièrement pertinentes pour une application médicale.
+
 
 ---
 
 # Conclusion
 
-*(Texte détaillé inchangé)*
+Ce travail de fouille de données avait pour objectif d’explorer les facteurs cliniques associés à la récidive du cancer de la thyroïde, à partir d’un jeu de données réel comportant 383 patients. À travers une démarche, combinant analyses exploratoires, réduction de dimension, clustering non supervisé et classification supervisée, plusieurs enseignements ont pu être tirés.
+
+L’analyse exploratoire a permis de mettre en évidence des associations fortes entre certaines variables et la récidive, en particulier la présence d’adénopathie, le type de réponse au traitement, le niveau de risque clinique, ou encore les classifications TNM (T, N, M). Le test du Chi² a confirmé statistiquement ces liens, identifiant ainsi des variables potentiellement discriminantes.
+
+Le clustering par k-means, appliqué aux dimensions issues de l’Analyse des Correspondances Multiples (ACM), a révélé quatre profils distincts de patients. Ces profils sont globalement cohérents : un cluster à très haut risque, un cluster intermédiaire avec facteurs isolés de gravité, et deux clusters correspondant à des cas peu avancés et bien pris en charge. Ce regroupement non supervisé permet ainsi d'envisager une stratification automatisée des patients selon leur niveau de risque.
+
+Enfin, plusieurs modèles de classification ont été comparés pour prédire la récidive. Les résultats montrent que les arbres de décision et les forêts aléatoires offrent les meilleures performances, avec des taux d’erreur moyens inférieurs à 4 %. Ces méthodes, tout en étant performantes, présentent l’avantage d’être explicables, ce qui est essentiel dans un contexte médical.
+
+En conclusion, ce projet démontre l’apport concret de la fouille de données dans le domaine de la santé, et en particulier dans le suivi post-thérapeutique des cancers. Il ouvre la voie à des outils de soutien à la décision permettant d’anticiper les récidives et d’adapter les parcours de soins. Des pistes d’amélioration pourraient consister à enrichir le jeu de données (imagerie, durée de suivi, informations biologiques, notre jeu de données contenant en outre une majorité de patient femme et avec un cancer papillaire) ou à tester d’autres approches de modélisation (réseaux de neurones, gradient boosting, modèles hybrides).
+
 
 ---
 
-# Bibliographie
+## Bibliographie
 
-*(Liste de références numérotées)*
+**Thyroid cancer gender disparity**
+
+[1] Contributeurs aux projets Wikimedia. (2024, 11 novembre). *Cancer de la thyroïde*. [https://fr.wikipedia.org/wiki/Cancer_de_la_thyro%C3%AFde](https://fr.wikipedia.org/wiki/Cancer_de_la_thyro%C3%AFde)
+
+[2] Contributeurs aux projets Wikimedia. (2024, 7 octobre). *Tumeur*. [https://fr.wikipedia.org/wiki/Tumeur](https://fr.wikipedia.org/wiki/Tumeur)
+
+[3] Rahbari, R., Zhang, L., & Kebebew, E. (2010). *Thyroid cancer gender disparity*. Future Oncology, 6(11), 1771‑1779. [https://doi.org/10.2217/fon.10.127](https://doi.org/10.2217/fon.10.127)
+
+[4] Fréquence et risque du cancer de la thyroïde - VIDAL. (s. d.). *VIDAL*. [https://www.vidal.fr/maladies/cancers/cancer-thyroide/frequence-risque.html](https://www.vidal.fr/maladies/cancers/cancer-thyroide/frequence-risque.html)
+
+[5] Du Cancer, C. C. S. /. S. C. (2024, 1 janvier). *Statistiques sur le cancer de la thyroïde*. Société canadienne du Cancer. [https://cancer.ca/fr/cancer-information/cancer-types/thyroid/statistics](https://cancer.ca/fr/cancer-information/cancer-types/thyroid/statistics)
+
+[6] Classification du cancer, fondation québécoise du cancer. [https://cancerquebec.ca/information-sur-le-cancer/le-cancer/classification-cancer/](https://cancerquebec.ca/information-sur-le-cancer/le-cancer/classification-cancer/)
+
+[7] Classification TNM 8ème édition.  
+[https://referentiels-aristot.com/wp-content/uploads/2_CPC_5_Classification.pdf](https://referentiels-aristot.com/wp-content/uploads/2_CPC_5_Classification.pdf)  
+[https://www.arcagy.org/infocancer/uploads/pdf/la-stadification-classification-tnm-8%C3%A8me-%C3%A9dition-2017-7249.pdf](https://www.arcagy.org/infocancer/uploads/pdf/la-stadification-classification-tnm-8%C3%A8me-%C3%A9dition-2017-7249.pdf)
+
+[8] Classification TNM Mc Millan cancer support.  
+[https://www.macmillan.org.uk/cancer-information-and-support/thyroid-cancer/stages#:~:text=T3a%20means%20the%20tumour%20is,thyroid%20gland%20into%20nearby%20muscles.](https://www.macmillan.org.uk/cancer-information-and-support/thyroid-cancer/stages#:~:text=T3a%20means%20the%20tumour%20is,thyroid%20gland%20into%20nearby%20muscles.)
+
+[9] Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., ... & Yutani, H. (2019). *Welcome to the tidyverse*. Journal of Open Source Software, 4(43), 1686. [https://doi.org/10.21105/joss.01686](https://doi.org/10.21105/joss.01686)
+
+[10] Wickham, H. (2016). *ggplot2: Elegant graphics for data analysis*. Springer-Verlag New York.
+
+[11] Pedersen, T. L. (2024). *patchwork: The Composer of Plots* (R package version 1.3.0). [https://CRAN.R-project.org/package=patchwork](https://CRAN.R-project.org/package=patchwork)
+
+[12] Sievert, C. (2020). *Interactive web-based data visualization with R, plotly, and shiny*. Chapman and Hall/CRC. [https://plotly-r.com](https://plotly-r.com)
+
+[13] Lê, S., Josse, J., & Husson, F. (2008). *FactoMineR: An R package for multivariate analysis*. Journal of Statistical Software, 25(1), 1–18. [https://doi.org/10.18637/jss.v025.i01](https://doi.org/10.18637/jss.v025.i01)
+
+[14] Kassambara, A., & Mundt, F. (2020). *factoextra: Extract and visualize the results of multivariate data analyses* (R package version 1.0.7). [https://CRAN.R-project.org/package=factoextra](https://CRAN.R-project.org/package=factoextra)
+
+[15] Maechler, M., Rousseeuw, P., Struyf, A., Hubert, M., & Hornik, K. (2025). *cluster: Cluster analysis basics and extensions* (R package version 2.1.8.1). [https://CRAN.R-project.org/package=cluster](https://CRAN.R-project.org/package=cluster)
 
 ---
 
@@ -179,15 +262,67 @@ Description des 4 modèles testés.
 
 ## Annexe 1 : Description des variables utilisées
 
-*(Tableau à insérer)*
+## Annexe 1 : Description des variables utilisées
+
+| Nom de la variable | Type         | Description                             | Modalités |
+|--------------------|--------------|-----------------------------------------|-----------|
+| Gender             | Qualitative  | Sexe                                    | "F", "M" |
+| Hx Radiotherapy    | Qualitative  | Antécédents de radiothérapie            | "No", "Yes" |
+| Adenopathy         | Qualitative  | Atteinte ganglionnaire                  | "No", "Right", "Extensive", "Left", "Bilateral", "Posterior" |
+| Pathology          | Qualitative  | Type de cancer thyroïdien               | "Micropapillary", "Papillary", "Follicular", "Hurthel cell" |
+| Focality           | Qualitative  | Focalité tumorale                       | "Uni-Focal", "Multi-Focal" |
+| Risk               | Qualitative  | Niveau de risque de propagation         | "Low", "Intermediate", "High" |
+| T                  | Qualitative  | Tumeur primitive (Classification TNM)   | "T1a", "T1b", "T2", "T3a", "T3b", "T4a", "T4b" |
+| N                  | Qualitative  | Tumeur dans les ganglions lymphatiques  | "N0", "N1a", "N1b" |
+| M                  | Qualitative  | Métastase                               | "M0", "M1" |
+| Stage              | Qualitative  | Stade du cancer                         | "I", "II", "III", "IVA", "IVB" |
+| Response           | Qualitative  | Réponse au traitement                   | "Indeterminate", "Excellent", "Structural Incomplete", "Biochemical Incomplete" |
+| Recurred           | Qualitative  | Récidive                                | "No", "Yes" |
+| Age                | Quantitative | Âge du patient                          | / |
+
 
 ## Annexe 2 : Classification TNM [6][7]
 
-*(Tableau à insérer)*
+## Annexe 2 : Classification TNM
+
+### T (Tumeur primitive)
+
+- **T1** : Tumeur < 2 cm. Elle ne s’est pas développée à l’extérieur de la glande thyroïde.
+  - **T1a** : Tumeur ≤ 1 cm.
+  - **T1b** : Tumeur > 1 cm et ≤ 2 cm.
+- **T2** : Tumeur > 2 cm et ≤ 4 cm. Elle ne s'est pas développée hors de la glande thyroïde.
+- **T3** : Tumeur > 4 cm ou légèrement développée à l’extérieur de la glande thyroïde.
+  - **T3a** : Tumeur > 4 cm, sans extension hors de la glande thyroïde.
+  - **T3b** : Tumeur de n’importe quelle taille, développée légèrement dans les muscles voisins.
+- **T4** : Tumeur développée à l’extérieur de la glande thyroïde dans les structures voisines.
+
+### N (Atteinte ganglionnaire)
+
+- **Nx** : Envahissement d’un ou plusieurs ganglions lymphatiques (non évalué).
+- **N1** : Propagation aux ganglions lymphatiques proches de la glande thyroïde ou dans la région du cou ou de la poitrine.
+  - **N1a** : Propagation aux ganglions du milieu du cou (proches de la thyroïde).
+  - **N1b** : Propagation aux ganglions d’un ou des deux côtés du cou, ou à la partie supérieure de la poitrine.
+
+### M (Métastases)
+
+- **Mx** : Présence de métastases non évaluée.
+- **M0** : Pas de métastases détectées.
+- **M1** : Présence de métastases.
+
 
 ## Annexe 3 : Classification des cancers par stade [8]
 
-*(Tableau à insérer)*
+## Annexe 3 : Classification des cancers par stade
+
+| Stade    | Description |
+|----------|-------------|
+| **Stade I** | Tumeur unique et de petite taille (exemple : T1N0M0). |
+| **Stade II** | Volume local plus important que le stade I (exemple : T2N0M0). |
+| **Stade III** | Envahissement des ganglions lymphatiques et/ou des tissus avoisinants (exemples : T1N1M0 ou T3N0M0). |
+| **Stade IV** | Extension aux organes distants. |
+| **Stade IV-A** | - Nodules tumoraux séparés dans un lobe controlatéral, ou<br> - Nodules pleuraux, ou<br> - Pleurésie maligne ou péricardite maligne, ou<br> - Une seule métastase dans un seul site. |
+| **Stade IV-B** | Extension plus large et/ou dissémination sous forme de multiples métastases dans l'organisme. |
+
 
 ## Annexe 4 : Caractéristiques des clusters
 
