@@ -262,8 +262,6 @@ En conclusion, ce projet démontre l’apport concret de la fouille de données 
 
 ## Annexe 1 : Description des variables utilisées
 
-## Annexe 1 : Description des variables utilisées
-
 | Nom de la variable | Type         | Description                             | Modalités |
 |--------------------|--------------|-----------------------------------------|-----------|
 | Gender             | Qualitative  | Sexe                                    | "F", "M" |
@@ -282,8 +280,6 @@ En conclusion, ce projet démontre l’apport concret de la fouille de données 
 
 
 ## Annexe 2 : Classification TNM [6][7]
-
-## Annexe 2 : Classification TNM
 
 ### T (Tumeur primitive)
 
@@ -312,8 +308,6 @@ En conclusion, ce projet démontre l’apport concret de la fouille de données 
 
 ## Annexe 3 : Classification des cancers par stade [8]
 
-## Annexe 3 : Classification des cancers par stade
-
 | Stade    | Description |
 |----------|-------------|
 | **Stade I** | Tumeur unique et de petite taille (exemple : T1N0M0). |
@@ -326,7 +320,6 @@ En conclusion, ce projet démontre l’apport concret de la fouille de données 
 
 ## Annexe 4 : Caractéristiques des clusters
 
-## Annexe 4 : Caractéristiques complètes des Clusters
 
 | Cluster | Gender | Hx Radiotherapy | Adenopathy | Pathology       | Focality     | Risk         | T    | N    | M   | Stage | Response              | Recurred |
 |---------|--------|-----------------|------------|-----------------|--------------|--------------|------|------|-----|-------|-----------------------|----------|
