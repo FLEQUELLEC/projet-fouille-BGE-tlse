@@ -103,7 +103,7 @@ Ce dataset rassemble les données cliniques de **383 patients** atteints d’un 
 
 ``` bash
 # Cloner le dépôt
-git clone https://gitlab.com/fouille_project/projet.git
+git clone https://github.com/FLEQUELLEC/projet-fouille-BGE-tlse.git
 cd projet
 ```
 
